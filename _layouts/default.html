@@ -15,16 +15,19 @@
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
-        <p>Finance Ph.D. Student at <a href="https://www.mccombs.utexas.edu/">McCombs School of Business</a>, <a href="https://www.utexas.edu/">University of Texas at Austin</a>.</p>
+        <p>Finance Ph.D. Student at <a href="https://www.mccombs.utexas.edu/" target="_blank">McCombs School of Business</a>, 
+        <a href="https://www.utexas.edu/" target="_blank">University of Texas at Austin</a>.</p>
 
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
-
-        {% if site.github.is_user_page %}
-        <p class="view"><a href="{{ site.github.owner_url }}">GitHub</a></p>
-        {% endif %}
+        <br>
+        <p>
+          Google Scholar | UT Austin Student Page | 
+          <a href="{{ site.github.owner_url }}" target="_blank">GitHub</a> | 
+          <a href="https://www.linkedin.com/in/zirui-wang/" target="_blank">LinkedIn</a>
+        </p>
 
       </header>
       <section>
