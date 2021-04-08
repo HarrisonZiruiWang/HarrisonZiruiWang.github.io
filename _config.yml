@@ -1,6 +1,4 @@
-title: Minimal theme
-logo: /assets/img/logo.png
-description: Minimal is a theme for GitHub Pages.
-show_downloads: true
-google_analytics:
+title: Zirui Wang
+logo: /assets/img/profile.jpg
+description: Finance Ph.D. Student at McCombs School of Business, University of Texas at Austin [Link to another page](./another-page.html).
 theme: jekyll-theme-minimal
