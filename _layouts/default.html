@@ -15,19 +15,23 @@
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
-        <p>Finance Ph.D. Student at <a href="https://www.mccombs.utexas.edu/" target="_blank">McCombs School of Business</a>, 
-        <a href="https://www.utexas.edu/" target="_blank">University of Texas at Austin</a>.</p>
+        <p>Finance Ph.D. Student<br>
+          <a href="https://www.mccombs.utexas.edu/" target="_blank">McCombs School of Business</a><br>
+          <a href="https://www.utexas.edu/" target="_blank">University of Texas at Austin</a>
+        </p>
 
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
-        <br>
-        <p>
-          Google Scholar | UT Austin Student Page | 
-          <a href="{{ site.github.owner_url }}" target="_blank">GitHub</a> | 
-          <a href="https://www.linkedin.com/in/zirui-wang/" target="_blank">LinkedIn</a>
-        </p>
+        <br><br><br>
+        <p><a href="./../Zirui_Wang_Resume.pdf" target="_blank">CV</a></p>
+        <br><br>
+        <p><a href="./../another-page.html" target="_blank">Research</a></p>
+        <br><br>
+        <p><a href="./../another-page.md" target="_blank">Teaching</a></p>
+        <br><br>
+        <p><a href="" target="_blank">Personal</a></p>
 
       </header>
       <section>
@@ -36,7 +40,10 @@
 
       </section>
       <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small><a href="{{ site.github.owner_url }}" target="_blank">GitHub</a></small></p>
+        <p><small><a href="https://www.linkedin.com/in/zirui-wang/" target="_blank">LinkedIn</a></small></p>
+        <p><small>Hosted on GitHub Pages.</small></p> 
+        <p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
