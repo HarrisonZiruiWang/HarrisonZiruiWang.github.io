@@ -41,9 +41,9 @@ Tutor, Fall 2020, UC San Deigo
 
 ## Other 
 
-Languages: Mandarin Chinese and English
-
 Programming Languages: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and LATEX
+
+Languages: Mandarin Chinese and English
 
 ## Contact
 
