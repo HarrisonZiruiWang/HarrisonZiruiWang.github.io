@@ -18,6 +18,11 @@ Research Interest: Behavioral Finance, Fintech
 
 ## Projects
 
+## Other 
+
+**Languages**: Mandarin Chinese and English
+  **Programming Languages**: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and LATEX
+
 ## Contact
 
 Phone: (858)900-5484
