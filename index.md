@@ -10,15 +10,15 @@ layout: default
   - B.A. Economics, 2021
   - _minor in Mathematics_
 
-[## Research](#research)
+## [Research](#research)
 
-Research Interest: Behavioral Finance, Fintech
+Research Interest: Behavioral Finance, Fintech, and more to be explored during Ph.D. program.
 
 ## Past Research Experience
 
 **Reasearch Assistant supervised by Prof Joseph Engelberg**
 
-I have been Professor Engelberg’s RA for his Portfolio-Driven Disposition Effect (PDDE) paper which is currently under revision at the Journal of Finance. I used Node.js and PostgreSQL to develop an online experiment that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and a similar platform for Chinese users. 
+I have been Professor Engelberg’s RA for his Portfolio-Driven Disposition Effect (PDDE) paper which is currently under revision at the Journal of Finance. The PDDE is the observation that investors have a strong disposition effect when their portfolio is at a loss and have almost no disposition effect when it is at a gain. To shed light on this effect, I used Node.js and PostgreSQL to develop an online experiment that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and a similar platform for Chinese users. 
 
 ## Projects
 
