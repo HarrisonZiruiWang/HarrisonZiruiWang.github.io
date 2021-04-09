@@ -26,7 +26,7 @@ I have been [Professor Joseph Engelberg](https://rady.ucsd.edu/faculty/directory
 
 **Languages**: Mandarin Chinese and English
 
-  **Programming Languages**: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and LATEX
+**Programming Languages**: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and LATEX
 
 ## Contact
 
