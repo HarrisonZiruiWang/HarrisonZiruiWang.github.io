@@ -25,6 +25,7 @@ I have been Professor Engelberg’s RA for his [Portfolio-Driven Disposition Eff
 ## Other 
 
 **Languages**: Mandarin Chinese and English
+
   **Programming Languages**: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and LATEX
 
 ## Contact
