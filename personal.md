@@ -2,8 +2,8 @@
 layout: default
 ---
 
-## Welcome to another page
+## Personal
 
-_yay_
+I play basketball in my spare time :)
 
-[back](./)
+[Home](./)
