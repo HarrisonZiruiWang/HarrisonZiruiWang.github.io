@@ -19,9 +19,9 @@ Each day I updated a model that predicted the course of the COVID-19 pandemic vi
 
 ## Education
 
-- **University of Texas at Austin**
+<ins>University of Texas at Austin<ins>
   - Ph.D., Finance, 2027 (expected)
-- **University of California, San Diego**
+<ins>University of California, San Diego<ins>
   - B.S., Computer Science, 2021
   - B.A., Economics, 2021
   - _minor in Mathematics_
