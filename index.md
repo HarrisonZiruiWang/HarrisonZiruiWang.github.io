@@ -9,48 +9,48 @@ Research Interest: Behavioral Finance, Fintech, and more to be explored during t
 
 <ins>Reasearch Assistant supervised by Prof. Joseph Engelberg</ins>
 
-I have been <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm" target="_blank">Professor Joseph Engelberg</a>’s Reasearch Assistant for his <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/PDDE.pdf" target="_blank">Portfolio-Driven Disposition Effect (PDDE) paper</a> which is currently under revision at the Journal of Finance. The PDDE is the observation that investors have a strong disposition effect when their portfolio is at a loss and have almost no disposition effect when it is at a gain. To shed light on this effect, I used Node.js and PostgreSQL to develop an <a href="https://gamestocktrading.herokuapp.com/" target="_blank">online experiment</a> that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and <a href="https://stocktradinggame-chinese.herokuapp.com/" target="_blank">a similar platform for Chinese users</a>. (<a href="https://github.com/HarrisonZiruiWang/stocktradinggame" target="_blank">GitHub page</a>)
+During my junior and senior years at UCSD, I have been <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm" target="_blank">Professor Joseph Engelberg</a>’s Reasearch Assistant for his <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/PDDE.pdf" target="_blank">Portfolio-Driven Disposition Effect (PDDE) paper</a> which is currently under revision at the Journal of Finance. The PDDE is the observation that investors have a strong disposition effect when their portfolio is at a loss and have almost no disposition effect when it is at a gain. To shed light on this effect, I used Node.js and PostgreSQL to develop an <a href="https://gamestocktrading.herokuapp.com/" target="_blank">online experiment</a> that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and <a href="https://stocktradinggame-chinese.herokuapp.com/" target="_blank">a similar platform for Chinese users</a>. (<a href="https://github.com/HarrisonZiruiWang/stocktradinggame" target="_blank">GitHub page</a>)
 
-Recently, I start to help Prof Engelberg on collecting data from the Web of Science. Using dynamic web scraping in Python, I downloaded the data of more than 28,000 papers from 65 journals. (<a href="https://drive.google.com/drive/folders/1Osw5JYMwvkv1bYBbtImAW9E6M0ebmUJy" target="_blank">Data</a>)
+Recently, I start to help Prof Engelberg on collecting data from the Web of Science. Using dynamic web scraping in Python, I downloaded the data of more than 280,000 papers from 65 journals. (<a href="https://drive.google.com/drive/folders/1Osw5JYMwvkv1bYBbtImAW9E6M0ebmUJy" target="_blank">Data</a>)
 
 <ins>Reasearch Assistant supervised by Prof. Alexis Akira Toda</ins>
 
 I also worked as <a href="https://sites.google.com/site/aatoda111/home" target="_blank">Professor Alexis Akira Toda</a>'s research assistant between April and
-August 2020. Each day I updated a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on Professor Toda's <a href="https://sites.google.com/site/aatoda111/misc/covid19" target="_blank">research page</a>.
+August 2020. Each day I run a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on Professor Toda's <a href="https://sites.google.com/site/aatoda111/misc/covid19" target="_blank">research page</a>.
 
 ## Education
 
-<ins>University of Texas at Austin<ins>
+<ins>University of Texas at Austin</ins>
   - Ph.D., Finance, 2027 (expected)
 
-<ins>University of California, San Diego<ins>
+<ins>University of California, San Diego</ins>
   - B.S., Computer Science, 2021
   - B.A., Economics, 2021
   - _minor in Mathematics_
 
 ## Teaching
 
-ECON 100C: Microeconomics C (Undergraduate)  
-Teaching Assistant, Winter 2021, UC San Deigo
+Teaching Assistant, ECON 100C: <ins>Microeconomics C</ins> (Undergraduate)  
+with <a href="https://econweb.ucsd.edu/~msinitsyn/sinitsyn.htm" target="_blank">Prof. Maxim Sinitsyn</a>, Winter 2021, UC San Deigo
 
-ECON 100A: Microeconomics A (Undergraduate)  
-Teaching Assistant, Fall 2020, UC San Deigo
+Teaching Assistant, ECON 100A: <ins>Microeconomics A</ins> (Undergraduate)  
+with <a href="https://econweb.ucsd.edu/~msinitsyn/sinitsyn.htm" target="_blank">Prof. Maxim Sinitsyn</a>, Fall 2020, UC San Deigo
 
-CSE 190: Post-Relational Data Models (Undergraduate)  
-Tutor, Fall 2020, UC San Deigo
+Tutor, CSE 190: <ins>Post-Relational Data Models</ins> (Undergraduate)  
+with <a href="http://www.db.ucsd.edu/People/alin/" target="_blank">Prof. Alin Deutsch</a>, Fall 2020, UC San Deigo
 
 <!-- ## Projects -->
 
 ## Other 
 
-Programming Languages: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and LATEX
+Programming Languages: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and Latex
 
 Languages: Mandarin Chinese and English
 
 ## Contact
 
 Phone: (858)900-5484  
-Email: [ziruiwang0611@gmail.com](mailto:ziruiwang0611@gmail.com)  
+Email: <a href="mailto:ziruiwang0611@gmail.com" target="_blank">ziruiwang0611@gmail.com</a>  
 Website: [harrisonziruiwang.github.io](https://harrisonziruiwang.github.io/)
 
 
