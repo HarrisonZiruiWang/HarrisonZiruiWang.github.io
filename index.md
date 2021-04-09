@@ -1,8 +1,32 @@
 ---
 layout: default
 ---
+## Education
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+- **University of Texas at Austin**
+  - Ph.D. Finance, 2027 (expected)
+- **University of California, San Diego**
+  - B.S. Computer Science, 2021
+  - B.A. Economics, 2021
+  - _minor in Mathematics_
+
+## Research
+
+Research Interest: Behavioral Finance, Fintech
+
+## Research Experience
+
+## Projects
+
+## Contact
+
+Phone: (858)900-5484
+Email: [ziruiwang0611@gmail.com](mailto:ziruiwang0611@gmail.com)
+Website: [https://harrisonziruiwang.github.io/](https://harrisonziruiwang.github.io/)
+
+Last updated on April 2021.
+
+<!-- Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
 
@@ -120,4 +144,4 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 
 ```
 The final element.
-```
+``` -->
