@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-## Education
+## testEducation
 
 - **University of Texas at Austin**
   - Ph.D., Finance, 2027 (expected)
