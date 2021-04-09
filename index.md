@@ -18,13 +18,13 @@ Research Interest: Behavioral Finance, Fintech, and more to be explored during t
 
 <ins>Reasearch Assistant supervised by Prof. Joseph Engelberg</ins>
 
-I have been [Professor Joseph Engelberg](https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm)’s Reasearch Assistant for his [Portfolio-Driven Disposition Effect (PDDE) paper](https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/PDDE.pdf) which is currently under revision at the Journal of Finance. The PDDE is the observation that investors have a strong disposition effect when their portfolio is at a loss and have almost no disposition effect when it is at a gain. To shed light on this effect, I used Node.js and PostgreSQL to develop an online experiment that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and a similar platform for Chinese users. 
+I have been <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm" target="_blank">Professor Joseph Engelberg</a>’s Reasearch Assistant for his <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/PDDE.pdf" target="_blank">Portfolio-Driven Disposition Effect (PDDE) paper</a> which is currently under revision at the Journal of Finance. The PDDE is the observation that investors have a strong disposition effect when their portfolio is at a loss and have almost no disposition effect when it is at a gain. To shed light on this effect, I used Node.js and PostgreSQL to develop an online experiment that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and a similar platform for Chinese users. 
 
 Recently, I start to help Prof Engelberg on collecting data from the Web of Science. Using dynamic web scraping in Python, I downloaded the data of more than 28,000 papers from 65 journals.
 
 <ins>Reasearch Assistant supervised by Prof. Alexis Akira Toda</ins>
 
-Each day I updated a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on Professor Toda's research page.
+Each day I updated a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on <a href="https://sites.google.com/site/aatoda111/home" target="_blank">Professor Alexis Toda</a>'s research page.
 
 ## Teaching
 
@@ -49,7 +49,7 @@ Programming Languages: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and 
 
 Phone: (858)900-5484  
 Email: [ziruiwang0611@gmail.com](mailto:ziruiwang0611@gmail.com)  
-Website: [harrisonziruiwang.github.io/](https://harrisonziruiwang.github.io/)
+Website: [harrisonziruiwang.github.io](https://harrisonziruiwang.github.io/)
 
 
 
