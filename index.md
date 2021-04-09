@@ -1,15 +1,6 @@
 ---
 layout: default
 ---
-## Education
-
-- **University of Texas at Austin**
-  - Ph.D., Finance, 2027 (expected)
-- **University of California, San Diego**
-  - B.S., Computer Science, 2021
-  - B.A., Economics, 2021
-  - _minor in Mathematics_
-
 ## Research
 
 Research Interest: Behavioral Finance, Fintech, and more to be explored during the Ph.D. program.
@@ -25,6 +16,15 @@ Recently, I start to help Prof Engelberg on collecting data from the Web of Scie
 <ins>Reasearch Assistant supervised by Prof. Alexis Akira Toda</ins>
 
 Each day I updated a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on <a href="https://sites.google.com/site/aatoda111/home" target="_blank">Professor Alexis Toda</a>'s research page.
+
+## Education
+
+- **University of Texas at Austin**
+  - Ph.D., Finance, 2027 (expected)
+- **University of California, San Diego**
+  - B.S., Computer Science, 2021
+  - B.A., Economics, 2021
+  - _minor in Mathematics_
 
 ## Teaching
 
