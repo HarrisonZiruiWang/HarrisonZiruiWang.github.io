@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-## [Education](#education)
+## Education
 
 - **University of Texas at Austin**
   - Ph.D. Finance, 2027 (expected)
@@ -10,9 +10,9 @@ layout: default
   - B.A. Economics, 2021
   - _minor in Mathematics_
 
-## [Research](#research)
+## Research
 
-**Research Interest**: Behavioral Finance, Fintech, and more to be explored during Ph.D. program.
+**Research Interest**: Behavioral Finance, Fintech, and more to be explored during the Ph.D. program.
 
 ## Past Research Experience
 
@@ -20,13 +20,24 @@ layout: default
 
 I have been [Professor Joseph Engelberg](https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm)’s RA for his [Portfolio-Driven Disposition Effect (PDDE) paper](https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/PDDE.pdf) which is currently under revision at the Journal of Finance. The PDDE is the observation that investors have a strong disposition effect when their portfolio is at a loss and have almost no disposition effect when it is at a gain. To shed light on this effect, I used Node.js and PostgreSQL to develop an online experiment that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and a similar platform for Chinese users. 
 
+## Teaching
+
+ECON 100C: Microeconomics C (Undergraduate)  
+Teaching Assistant, Winter 2021, UC San Deigo
+
+ECON 100A: Microeconomics A (Undergraduate)  
+Teaching Assistant, Fall 2020, UC San Deigo
+
+CSE 190: Post-Relational Data Models (Undergraduate)  
+Tutor, Fall 2020, UC San Deigo
+
 ## Projects
 
 ## Other 
 
-**Languages**: Mandarin Chinese and English
+Languages: Mandarin Chinese and English
 
-**Programming Languages**: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and LATEX
+Programming Languages: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and LATEX
 
 ## Contact
 
@@ -41,7 +52,7 @@ Website: [harrisonziruiwang.github.io/](https://harrisonziruiwang.github.io/)
 Last updated on April 2021.
 
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+<!-- Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
 
@@ -135,7 +146,7 @@ end
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 
-### [Large image](#test)
+### Large image
 
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
@@ -159,4 +170,4 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 
 ```
 The final element.
-```
+``` -->
