@@ -3,7 +3,7 @@ layout: default
 ---
 ## Research
 
-Research Interest: Behavioral Finance, Fintech, and more to be explored during the Ph.D. program.
+Research Interests: Behavioral Finance, Fintech, and more to be explored during the Ph.D. program.
 
 ## Past Research Experience
 
@@ -51,7 +51,7 @@ Languages: Mandarin Chinese and English
 
 Phone: (858)900-5484  
 Email: <a href="mailto:ziruiwang0611@gmail.com" target="_blank">ziruiwang0611@gmail.com</a>  
-Website: [harrisonziruiwang.github.io](https://harrisonziruiwang.github.io/)
+Website: [www.wang-zirui.com](http://www.wang-zirui.com/)
 
 
 
