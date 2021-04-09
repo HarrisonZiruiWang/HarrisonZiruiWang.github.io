@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-## Education
+## [Education](#education)
 
 - **University of Texas at Austin**
   - Ph.D. Finance, 2027 (expected)
@@ -10,11 +10,15 @@ layout: default
   - B.A. Economics, 2021
   - _minor in Mathematics_
 
-## Research
+[## Research](#research)
 
 Research Interest: Behavioral Finance, Fintech
 
-## Research Experience
+## Past Research Experience
+
+**Reasearch Assistant supervised by Prof Joseph Engelberg**
+
+I have been Professor Engelberg’s RA for his Portfolio-Driven Disposition Effect (PDDE) paper which is currently under revision at the Journal of Finance. I used Node.js and PostgreSQL to develop an online experiment that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and a similar platform for Chinese users. 
 
 ## Projects
 
@@ -26,8 +30,12 @@ Research Interest: Behavioral Finance, Fintech
 ## Contact
 
 Phone: (858)900-5484
+
 Email: [ziruiwang0611@gmail.com](mailto:ziruiwang0611@gmail.com)
-Website: [https://harrisonziruiwang.github.io/](https://harrisonziruiwang.github.io/)
+
+Website: [harrisonziruiwang.github.io/](https://harrisonziruiwang.github.io/)
+
+
 
 Last updated on April 2021.
 
