@@ -14,7 +14,7 @@ Getting into a top Finance (Economics) Ph.D. program is hard. It requires resear
 *   <a href="https://abhishekn.com/files/phdguide.pdf" target="_black">A Guide to Business PhD Applications</a> by Prof Abhishek Nagaraj
 *   <a href="https://www.ivo-welch.info/teaching/advicephd.html" target="_black">Advice to PhD applicants and students</a> by Prof Ivo Welch
 *   <a href="https://athey.people.stanford.edu/professional-advice" target="_black">Advice for Applying to Grad School in Economics</a> by Prof Susan Athey
-*   <a href="https://chrisblattman.com/about/contact/gradschool/" target="_black">Frequently asked questions on PhD applications</a> by Prof Chris Blattman
+*   <a href="https://chrisblattman.com/about/contact/gradschool/" target="_black">FAQ on PhD applications</a> by Prof Christopher Blattman
 *   <a href="https://alexisakira.github.io/misc/apply-econphd" target="_black">Applying to economics Ph.D. programs</a> by Prof Alexis Akira Toda
 *   <a href="https://www.brown.edu/Research/Shapiro/pdfs/phdnotes.pdf" target="_black">Notes on Applying for a PhD in Economics</a> by Prof Jesse Shapiro
 *   <a href="http://www.sitaslavov.com/home/advice" target="_black">Tips for Applying to Ph.D. Programs in Economics</a> by Prof Nataraj Slavov
