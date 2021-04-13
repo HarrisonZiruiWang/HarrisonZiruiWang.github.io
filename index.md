@@ -21,7 +21,7 @@ August 2020. Each day I run a model that predicted the course of the COVID-19 pa
 ## Education
 
 <ins>University of Texas at Austin</ins>
-  - Ph.D., Finance, 2027 (expected)
+  - Ph.D., Finance, 2026 (expected)
 
 <ins>University of California, San Diego</ins>
   - B.S., Computer Science, 2021
