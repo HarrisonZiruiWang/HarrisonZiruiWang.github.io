@@ -50,7 +50,7 @@ Languages: Mandarin Chinese and English
 ## Contact
 
 Phone: (858)900-5484  
-Email: <a href="mailto:ziruiwang0611@gmail.com" target="_blank">ziruiwang0611@gmail.com</a>  
+Email: <a href="mailto:zirui.wang@utexas.edu" target="_blank">zirui.wang@utexas.edu</a>  
 Website: [www.wang-zirui.com](https://www.wang-zirui.com/)
 
 
