@@ -49,6 +49,7 @@ with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_bla
 
 ## Contact
 
+<ins>Office</ins>: CBA 5.324D  
 <ins>Phone</ins>: +1(858)900-5484  
 <ins>Email</ins>: <a href="mailto:zirui.wang@mccombs.utexas.edu" target="_blank">zirui.wang@mccombs.utexas.edu</a>  
 <ins>Website</ins>: [www.wang-zirui.com](https://www.wang-zirui.com/)  
