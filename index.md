@@ -43,19 +43,23 @@ with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_bla
 
 ## Other 
 
-Programming Languages: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and Latex
+<ins>Programming Languages</ins>: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and Latex
 
-Languages: Mandarin Chinese and English
+<ins>Languages</ins>: Mandarin Chinese and English
 
 ## Contact
 
-Phone: (858)900-5484  
-Email: <a href="mailto:zirui.wang@utexas.edu" target="_blank">zirui.wang@utexas.edu</a>  
-Website: [www.wang-zirui.com](https://www.wang-zirui.com/)
+<ins>Phone</ins>: +1(858)900-5484  
+<ins>Email</ins>: <a href="mailto:zirui.wang@mccombs.utexas.edu" target="_blank">zirui.wang@mccombs.utexas.edu</a>  
+<ins>Website</ins>: [www.wang-zirui.com](https://www.wang-zirui.com/)
+<ins>Address</ins>: 
+UT Austin, McCombs School of Business
+Department of Finance CBA 5.324D
+2110 Speedway, Stop B6600
+Austin, TX 78712
 
 
-
-Last updated on April 2021.
+Last updated on August 2021.
 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~.
