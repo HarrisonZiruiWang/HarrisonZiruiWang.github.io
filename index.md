@@ -43,7 +43,7 @@ with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_bla
 
 ## Other 
 
-<ins>Programming Languages</ins>: C, C++, Java, JavaScript, Python, SQL, HTML, MATLAB, and Latex
+<ins>Programming Languages</ins>: C, C++, Java, JavaScript, Python, Stata, SQL, HTML, MATLAB, and LATEX
 
 <ins>Languages</ins>: Mandarin Chinese and English
 
