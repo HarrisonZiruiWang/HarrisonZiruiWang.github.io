@@ -4,9 +4,9 @@ layout: default
 
 ## Personal
 
-Born and raised in Mainland China, educated in the U.S., I regard myself as a fast learner that is driven and full of initiative. 
-
 My Chinese name is 王梓瑞. “梓瑞” is Zirui, my first name. It pronouces as Zee Ray.
+
+Born and raised in Mainland China, educated in the U.S., I regard myself as a fast learner that is driven and full of initiative. 
 
 I play basketball in my spare time :)
 
