@@ -8,7 +8,7 @@ Research Interests: Behavioral Finance, Fintech, and more to be explored during 
 ## Research Experience
   <ins>Reasearch Assistant supervised by Prof. Michael Sockin</ins> 2021-Present
   
-  <ins>Reasearch Assistant supervised by Prof. John Griffin</ins> 2021-Present
+  <!-- <ins>Reasearch Assistant supervised by Prof. John Griffin</ins> 2021-Present -->
 
   <ins>Reasearch Assistant supervised by Prof. Joseph Engelberg</ins> 2020-2021  
   <details>
