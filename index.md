@@ -18,6 +18,11 @@ In my senior year, I also helped Prof Engelberg collect data from the Web of Sci
 I also worked as <a href="https://sites.google.com/site/aatoda111/home" target="_blank">Professor Alexis Akira Toda</a>'s research assistant between April and
 August 2020. Each day I run a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on Professor Toda's <a href="https://sites.google.com/site/aatoda111/misc/covid19" target="_blank">research page</a>.
 
+<details>
+  <summary>Epcot Center</summary>
+  <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+</details>
+
 ## Education
 
 <ins>University of Texas at Austin</ins>
