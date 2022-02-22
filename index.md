@@ -33,6 +33,11 @@ Research Interests: Behavioral Finance, Fintech, and more to be explored during 
   - _minor in Mathematics_
 
 ## Teaching
+Teaching Assistant, FIN 367: <ins>Investment</ins> (Undergraduate)  
+with <a href="https://sites.google.com/site/michaelsockin/" target="_blank">Prof. Michael Sockin</a>, Spring 2022, UT Austin
+
+Teaching Assistant, FIN 367: <ins>Investment</ins> (Undergraduate)  
+with <a href="https://www.mccombs.utexas.edu/faculty-and-research/faculty-directory/andres-donangelo/" target="_blank">Prof. Andres Donangelo</a>, Spring 2022, UT Austin
 
 Teaching Assistant, ECON 100C: <ins>Microeconomics C</ins> (Undergraduate)  
 with <a href="https://econweb.ucsd.edu/~msinitsyn/sinitsyn.htm" target="_blank">Prof. Maxim Sinitsyn</a>, Winter 2021, UC San Deigo
