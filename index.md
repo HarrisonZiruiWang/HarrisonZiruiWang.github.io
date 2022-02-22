@@ -11,7 +11,7 @@ Research Interests: Behavioral Finance, Fintech, and more to be explored during 
 
 <!-- <ins>Reasearch Assistant supervised by Prof. John Griffin</ins> 2021-Present -->
 
-<p><ins>Reasearch Assistant supervised by Prof. Joseph Engelberg</ins> 2020-2021 <br/>
+<p><ins>Reasearch Assistant supervised by Prof. Joseph Engelberg</ins> 2020-2021
   <details>
     <summary>Details</summary>
     <p>During my junior and senior years at UCSD, I have been <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm" target="_blank">Professor Joseph Engelberg</a>’s Reasearch Assistant for his <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/PDDE.pdf" target="_blank"><i>Portfolio-Driven Disposition Effect (PDDE)</i> paper</a> which is currently under revision at the <i>Journal of Finance</i>. The PDDE is the observation that investors have a strong disposition effect when their portfolio is at a loss and have almost no disposition effect when it is at a gain. To shed light on this effect, I used Node.js and PostgreSQL to develop an <a href="https://gamestocktrading.herokuapp.com/" target="_blank">online experiment</a> that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and <a href="https://stocktradinggame-chinese.herokuapp.com/" target="_blank">a similar platform for Chinese users</a>. (<a href="https://github.com/HarrisonZiruiWang/stocktradinggame" target="_blank">GitHub page</a>)</p>
