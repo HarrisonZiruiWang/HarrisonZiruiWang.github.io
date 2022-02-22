@@ -18,8 +18,6 @@ Research Interests: Behavioral Finance, Fintech, and more to be explored during 
     <p>In my senior year, I also helped Prof Engelberg collect data from the Web of Science & Google Scholar for his <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3565487" target="_blank"><i>On the Causal Effect of Fame on Citations</i> paper</a> which is currently under revision at the <i>Journal of Financial Economics</i>. Using dynamic web scraping in Python, I downloaded the data of more than 280,000 papers from 65 journals. I built a dataset which has all details about each paper, including DOI and Google Scholar ID, and a dataset which specifies the cite count for each paper in each year. (<a href="https://drive.google.com/drive/folders/1Osw5JYMwvkv1bYBbtImAW9E6M0ebmUJy?usp=sharing" target="_blank">Data</a>)</p>
   </details>
 </p> 
-<br/>
-
 
 <ins>Reasearch Assistant supervised by Prof. Alexis Akira Toda</ins> 2020
 <details>
