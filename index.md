@@ -26,6 +26,7 @@ Research Interests: Behavioral Finance, Fintech, and more to be explored during 
 
 <ins>University of Texas at Austin</ins>
   - Ph.D., Finance, 2026 (expected)
+  - M.S., Finance, 2023 (expected)
 
 <ins>University of California, San Diego</ins>
   - B.S., Computer Science, 2021
@@ -68,7 +69,7 @@ Department of Finance CBA 5.324D
 Austin, TX 78712  
 
 
-Last updated on August 2021.
+Last updated on February 2022.
 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~.
