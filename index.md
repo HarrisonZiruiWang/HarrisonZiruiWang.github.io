@@ -3,7 +3,7 @@ layout: default
 ---
 ## Research
 
-Research Interests: Behavioral Finance, Fintech, and more to be explored during the Ph.D. program.
+Research Interests: Forensic Finance, Behavioral Finance, Fintech, and more to be explored during the Ph.D. program.
 
 ## Research Experience
 <ins>Research Assistant supervised by <a href="https://jgriffin.info/" target="_blank">Prof. John Griffin</a></ins> 2021-Present
