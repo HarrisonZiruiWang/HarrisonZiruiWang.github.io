@@ -19,6 +19,7 @@ Research Interests: Forensic Finance, Behavioral Finance, Fintech, and more to b
   <p>In my senior year, I also helped Prof Engelberg collect data from the Web of Science & Google Scholar for his <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3565487" target="_blank"><i>On the Causal Effect of Fame on Citations</i> paper</a> which is currently under revision at the <i>Journal of Financial Economics</i>. Using dynamic web scraping in Python, I downloaded the data of more than 280,000 papers from 65 journals. I built a dataset which has all details about each paper, including DOI and Google Scholar ID, and a dataset which specifies the cite count for each paper in each year. </p>
 </details>
 <br/>
+
 <ins>Research Assistant supervised by <a href="https://alexisakira.github.io/" target="_blank">Prof. Alexis Akira Toda</a></ins> 2020
 <details>
   <summary>Details</summary>
@@ -64,12 +65,13 @@ with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_bla
 <ins>Office</ins>: CBA 5.324D  
 <ins>Phone</ins>: +1(512) 632-9383  
 <ins>Email</ins>: <a href="mailto:zirui.wang@mccombs.utexas.edu" target="_blank">zirui.wang@mccombs.utexas.edu</a>  
-<ins>Website</ins>: [www.wang-zirui.com](https://www.wang-zirui.com/)  
-<!-- <ins>Address</ins>:  
+<ins>Website</ins>: [www.wang-zirui.com](https://www.wang-zirui.com/)
+
+<ins>Address</ins>:  
 UT Austin, McCombs School of Business  
 Department of Finance CBA 5.324D  
 2110 Speedway, Stop B6600  
-Austin, TX 78712   -->
+Austin, TX 78712  
 
 
 Last updated on February 2022.
