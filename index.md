@@ -19,14 +19,12 @@ Research Interests: Forensic Finance, Behavioral Finance, Fintech, and more to b
   <p>In my senior year, I also helped Prof Engelberg collect data from the Web of Science & Google Scholar for his <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3565487" target="_blank"><i>On the Causal Effect of Fame on Citations</i> paper</a> which is currently under revision at the <i>Journal of Financial Economics</i>. Using dynamic web scraping in Python, I downloaded the data of more than 280,000 papers from 65 journals. I built a dataset which has all details about each paper, including DOI and Google Scholar ID, and a dataset which specifies the cite count for each paper in each year. </p>
 </details>
 <br/>
-
 <ins>Research Assistant supervised by <a href="https://alexisakira.github.io/" target="_blank">Prof. Alexis Akira Toda</a></ins> 2020
 <details>
   <summary>Details</summary>
   <p>I also worked as <a href="https://alexisakira.github.io/" target="_blank">Professor Alexis Akira Toda</a>'s research assistant between April and August 2020. Each day I run a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on Professor Toda's <a href="https://sites.google.com/site/aatoda111/misc/covid19" target="_blank">research page</a>.</p>
 </details>
 <br/>
-
 ## Education
 
 <ins>University of Texas at Austin</ins>
