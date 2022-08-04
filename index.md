@@ -23,8 +23,8 @@ Research Interests: Forensic Finance, Behavioral Finance, Fintech, and more to b
 <details>
   <summary>Details</summary>
   <p>I also worked as <a href="https://alexisakira.github.io/" target="_blank">Professor Alexis Akira Toda</a>'s research assistant between April and August 2020. Each day I run a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on Professor Toda's <a href="https://sites.google.com/site/aatoda111/misc/covid19" target="_blank">research page</a>.</p>
-</details>
-<br/>
+</details>  
+
 ## Education
 
 <ins>University of Texas at Austin</ins>
@@ -62,7 +62,7 @@ with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_bla
 ## Contact
 
 <ins>Office</ins>: CBA 5.324D  
-<ins>Phone</ins>: +1(858)900-5484  
+<ins>Phone</ins>: +1(512)632-9383  
 <ins>Email</ins>: <a href="mailto:zirui.wang@mccombs.utexas.edu" target="_blank">zirui.wang@mccombs.utexas.edu</a>  
 <ins>Website</ins>: [www.wang-zirui.com](https://www.wang-zirui.com/)  
 <ins>Address</ins>:  
