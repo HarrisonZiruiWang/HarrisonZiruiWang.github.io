@@ -18,12 +18,14 @@ Research Interests: Forensic Finance, Behavioral Finance, Fintech, and more to b
   <p>During my junior and senior years at UCSD, I have been <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm" target="_blank">Professor Joseph Engelberg</a>’s Research Assistant for his <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/PDDE.pdf" target="_blank"><i>Portfolio-Driven Disposition Effect (PDDE)</i> paper</a> which is currently under revision at the <i>Journal of Finance</i>. The PDDE is the observation that investors have a strong disposition effect when their portfolio is at a loss and have almost no disposition effect when it is at a gain. To shed light on this effect, I used Node.js and PostgreSQL to develop an <a href="https://gamestocktrading.herokuapp.com/" target="_blank">online experiment</a> that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and <a href="https://stocktradinggame-chinese.herokuapp.com/" target="_blank">a similar platform for Chinese users</a>. (<a href="https://github.com/HarrisonZiruiWang/stocktradinggame" target="_blank">GitHub page</a>)</p>
   <p>In my senior year, I also helped Prof Engelberg collect data from the Web of Science & Google Scholar for his <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3565487" target="_blank"><i>On the Causal Effect of Fame on Citations</i> paper</a> which is currently under revision at the <i>Journal of Financial Economics</i>. Using dynamic web scraping in Python, I downloaded the data of more than 280,000 papers from 65 journals. I built a dataset which has all details about each paper, including DOI and Google Scholar ID, and a dataset which specifies the cite count for each paper in each year. </p>
 </details>
+<br/>
 
 <ins>Research Assistant supervised by <a href="https://alexisakira.github.io/" target="_blank">Prof. Alexis Akira Toda</a></ins> 2020
 <details>
   <summary>Details</summary>
   <p>I also worked as <a href="https://alexisakira.github.io/" target="_blank">Professor Alexis Akira Toda</a>'s research assistant between April and August 2020. Each day I run a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on Professor Toda's <a href="https://sites.google.com/site/aatoda111/misc/covid19" target="_blank">research page</a>.</p>
-</details>  
+</details>
+<br/>
 
 ## Education
 
@@ -62,14 +64,14 @@ with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_bla
 ## Contact
 
 <ins>Office</ins>: CBA 5.324D  
-<ins>Phone</ins>: +1(512)632-9383  
+<ins>Phone</ins>: +1(512) 632-9383  
 <ins>Email</ins>: <a href="mailto:zirui.wang@mccombs.utexas.edu" target="_blank">zirui.wang@mccombs.utexas.edu</a>  
 <ins>Website</ins>: [www.wang-zirui.com](https://www.wang-zirui.com/)  
-<ins>Address</ins>:  
+<!-- <ins>Address</ins>:  
 UT Austin, McCombs School of Business  
 Department of Finance CBA 5.324D  
 2110 Speedway, Stop B6600  
-Austin, TX 78712  
+Austin, TX 78712   -->
 
 
 Last updated on February 2022.
