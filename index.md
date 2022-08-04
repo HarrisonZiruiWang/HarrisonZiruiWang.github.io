@@ -69,8 +69,7 @@ with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_bla
 <ins>Address</ins>:  
 UT Austin, McCombs School of Business  
 Department of Finance CBA 5.324D  
-2110 Speedway, Stop B6600
-Austin, TX 78712  
+2110 Speedway, Stop B6600, Austin, TX 78712  
 
 
 Last updated on February 2022.
