@@ -6,11 +6,11 @@ layout: default
 Research Interests: Forensic Finance, Behavioral Finance, Fintech, and more to be explored during the Ph.D. program.
 
 ## Research Experience
-<ins>Research Assistant supervised by <a href="https://jgriffin.info/" target="_blank">Prof. John Griffin</a></ins> 2021-Present
+<ins>Research Assistant supervised by <a href="https://sites.utexas.edu/skruger/" target="_blank">Prof. Samuel Kruger</a></ins> 2022-Present
+
+<ins>Research Assistant supervised by <a href="https://jgriffin.info/" target="_blank">Prof. John M. Griffin</a></ins> 2021-Present
 
 <ins>Research Assistant supervised by <a href="https://sites.google.com/site/michaelsockin/" target="_blank">Prof. Michael Sockin</a></ins> 2021-Present
-
-<!-- <ins>Research Assistant supervised by Prof. John Griffin</ins> 2021-Present -->
 
 <ins>Research Assistant supervised by <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm" target="_blank">Prof. Joseph Engelberg</a></ins> 2020-2021
 <details>
@@ -38,6 +38,9 @@ Research Interests: Forensic Finance, Behavioral Finance, Fintech, and more to b
 
 ## Teaching
 Teaching Assistant, FIN 367: <ins>Investment Management</ins> (Undergraduate)  
+with <a href="https://sites.google.com/site/michaelsockin/" target="_blank">Prof. Michael Sockin</a>, Spring 2023, UT Austin
+
+Teaching Assistant, FIN 367: <ins>Investment Management</ins> (Undergraduate)  
 with <a href="https://sites.google.com/site/michaelsockin/" target="_blank">Prof. Michael Sockin</a>, Spring 2022, UT Austin
 
 Teaching Assistant, FIN 367: <ins>Investment Management</ins> (Undergraduate)  
@@ -55,24 +58,24 @@ with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_bla
 
 ## Other 
 
-<ins>Programming Languages</ins>: C, C++, Java, JavaScript, Python, Stata, SQL, HTML, MATLAB, and LATEX
+<ins>Programming Languages</ins>: Python, Stata, C, C++, Java, JavaScript, SQL, HTML, MATLAB, and LATEX
 
-<ins>Languages</ins>: Mandarin Chinese and English
+<ins>Languages</ins>: English and Mandarin Chinese 
 
 ## Contact
 
-<ins>Office</ins>: CBA 5.324D  
+<ins>Office</ins>: CBA 1.312J  
 <ins>Phone</ins>: +1(512) 632-9383  
 <ins>Email</ins>: <a href="mailto:zirui.wang@mccombs.utexas.edu" target="_blank">zirui.wang@mccombs.utexas.edu</a>  
 <ins>Website</ins>: [www.wang-zirui.com](https://www.wang-zirui.com/)
 
 <ins>Address</ins>:  
 UT Austin, McCombs School of Business  
-Department of Finance CBA 5.324D  
+Department of Finance CBA 1.312J  
 2110 Speedway, Stop B6600, Austin, TX 78712  
 
 
-Last updated on February 2022.
+Last updated on February 2023.
 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~.
