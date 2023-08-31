@@ -6,17 +6,19 @@ layout: default
 Research Interests: Forensic Finance, Behavioral Finance, Crypto, Fintech, and more to be explored during the Ph.D. program.
 
 ## Research Experience
+<ins>Research Assistant supervised by <a href="https://faculty.mccombs.utexas.edu/aydogan.alti/" target="_blank">Prof. Aydoğan Alti</a></ins> 2023-Present
+
 <ins>Research Assistant supervised by <a href="https://sites.utexas.edu/skruger/" target="_blank">Prof. Samuel Kruger</a></ins> 2022-Present
 
 <ins>Research Assistant supervised by <a href="https://jgriffin.info/" target="_blank">Prof. John M. Griffin</a></ins> 2021-Present
 
-<ins>Research Assistant supervised by <a href="https://sites.google.com/site/michaelsockin/" target="_blank">Prof. Michael Sockin</a></ins> 2021-Present
+<ins>Research Assistant supervised by <a href="https://sites.google.com/site/michaelsockin/" target="_blank">Prof. Michael Sockin</a></ins> 2021-2023
 
 <ins>Research Assistant supervised by <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm" target="_blank">Prof. Joseph Engelberg</a></ins> 2020-2021
 <details>
   <summary>Details</summary>
   <p>During my junior and senior years at UCSD, I have been <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/index.htm" target="_blank">Professor Joseph Engelberg</a>’s Research Assistant for his <a href="https://rady.ucsd.edu/faculty/directory/engelberg/pub/portfolios/PDDE.pdf" target="_blank"><i>Portfolio-Driven Disposition Effect (PDDE)</i> paper</a> which is currently under revision at the <i>Journal of Finance</i>. The PDDE is the observation that investors have a strong disposition effect when their portfolio is at a loss and have almost no disposition effect when it is at a gain. To shed light on this effect, I used Node.js and PostgreSQL to develop an <a href="https://gamestocktrading.herokuapp.com/" target="_blank">online experiment</a> that simulates the changes in the net worth of a stock portfolio and enables participants to make trading decisions among four stocks. The experiment has been run on thousands of participants on Amazon Mechanical Turk and <a href="https://stocktradinggame-chinese.herokuapp.com/" target="_blank">a similar platform for Chinese users</a>. (<a href="https://github.com/HarrisonZiruiWang/stocktradinggame" target="_blank">GitHub page</a>)</p>
-  <p>In my senior year, I also helped Prof Engelberg collect data from the Web of Science & Google Scholar for his <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3565487" target="_blank"><i>On the Causal Effect of Fame on Citations</i> paper</a> which is currently under revision at the <i>Journal of Financial Economics</i>. Using dynamic web scraping in Python, I downloaded the data of more than 280,000 papers from 65 journals. I built a dataset which has all details about each paper, including DOI and Google Scholar ID, and a dataset which specifies the cite count for each paper in each year. </p>
+  <p>In my senior year, I also helped Prof Engelberg collect data from the Web of Science & Google Scholar for his <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3565487" target="_blank"><i>On the Causal Effect of Fame on Citations</i> paper</a> which is forthcoming at the <i>Management Science</i>. Using dynamic web scraping in Python, I downloaded the data of more than 280,000 papers from 65 journals. I built a dataset which has all details about each paper, including DOI and Google Scholar ID, and a dataset which specifies the cite count for each paper in each year. </p>
 </details>
 <br/>
 <ins>Research Assistant supervised by <a href="https://alexisakira.github.io/" target="_blank">Prof. Alexis Akira Toda</a></ins> 2020
@@ -38,6 +40,10 @@ Research Interests: Forensic Finance, Behavioral Finance, Crypto, Fintech, and m
   - _minor in Mathematics_
 
 ## Teaching
+
+Head TA, FIN 367: <ins>Investment Management</ins> (Undergraduate)  
+with <a href="https://sites.utexas.edu/skruger/" target="_blank">Prof. Samuel Kruger</a>, Fall 2023, UT Austin
+
 Teaching Assistant, FIN 367: <ins>Investment Management</ins> (Undergraduate)  
 with <a href="https://sites.google.com/site/michaelsockin/" target="_blank">Prof. Michael Sockin</a>, Spring 2023, UT Austin
 
@@ -76,7 +82,7 @@ Department of Finance CBA 1.312J
 2110 Speedway, Stop B6600, Austin, TX 78712  
 
 
-Last updated on February 2023.
+Last updated on August 2023.
 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~.
