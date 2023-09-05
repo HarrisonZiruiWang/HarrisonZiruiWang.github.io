@@ -54,10 +54,16 @@ Teaching Assistant, FIN 367: <ins>Investment Management</ins> (Undergraduate)
 with <a href="https://www.andresdonangelo.com/" target="_blank">Prof. Andres Donangelo</a>, Spring 2022, UT Austin
 
 Teaching Assistant, ECON 100C: <ins>Microeconomics C</ins> (Undergraduate)  
+with <a href="https://sites.northwestern.edu/maximsinitsyn" target="_blank">Prof. Maxim Sinitsyn</a>, Winter 2021, UC San Deigo
+
+Teaching Assistant, ECON 100A: <ins>Microeconomics A</ins> (Undergraduate)  
+with <a href="https://sites.northwestern.edu/maximsinitsyn" target="_blank">Prof. Maxim Sinitsyn</a>, Fall 2020, UC San Deigo
+
+<!-- Teaching Assistant, ECON 100C: <ins>Microeconomics C</ins> (Undergraduate)  
 with <a href="https://econweb.ucsd.edu/~msinitsyn/sinitsyn.htm" target="_blank">Prof. Maxim Sinitsyn</a>, Winter 2021, UC San Deigo
 
 Teaching Assistant, ECON 100A: <ins>Microeconomics A</ins> (Undergraduate)  
-with <a href="https://econweb.ucsd.edu/~msinitsyn/sinitsyn.htm" target="_blank">Prof. Maxim Sinitsyn</a>, Fall 2020, UC San Deigo
+with <a href="https://econweb.ucsd.edu/~msinitsyn/sinitsyn.htm" target="_blank">Prof. Maxim Sinitsyn</a>, Fall 2020, UC San Deigo -->
 
 Tutor, CSE 190: <ins>Post-Relational Data Models</ins> (Undergraduate)  
 with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_blank">Prof. Alin Deutsch</a>, Fall 2020, UC San Deigo
