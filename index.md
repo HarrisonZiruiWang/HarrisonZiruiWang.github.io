@@ -22,10 +22,10 @@ Research Interests: Forensic Finance, Behavioral Finance, Crypto, Fintech, and m
 </details>
 <br/>
 <ins>Research Assistant supervised by <a href="https://alexisakira.github.io/" target="_blank">Prof. Alexis Akira Toda</a></ins> 2020
-<details>
+<!-- <details>
   <summary>Details</summary>
   <p>I also worked as <a href="https://alexisakira.github.io/" target="_blank">Professor Alexis Akira Toda</a>'s research assistant between April and August 2020. Each day I run a model that predicted the course of the COVID-19 pandemic via MATLAB code and updated the data visualization on Professor Toda's <a href="https://sites.google.com/site/aatoda111/misc/covid19" target="_blank">research page</a>.</p>
-</details>
+</details> -->
 <br/>
 
 ## Education
