@@ -6,9 +6,7 @@ layout: default
 
 My Chinese name is 王梓瑞. “梓瑞” is Zirui, my first name. It pronounces as Zee Ray.
 
-Born and raised in Mainland China, educated in the U.S., I regard myself as a fast learner that is driven and full of initiative. 
-
-I play basketball in my spare time :)
+I enjoy playing basketball in my spare time :)
 
 ## Advice on getting into a Finance PhD program
 
