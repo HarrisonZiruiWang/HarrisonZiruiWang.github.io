@@ -3,7 +3,7 @@ layout: default
 ---
 ## Research
 
-Research Interests: Forensic Finance, Fintech, Cryptocurrency, Financial Machine Learning, Behavioral Finance, and more to be explored during the Ph.D. program.
+Research Interests: Forensic Finance, Sustainable Finance, Fintech, Cryptocurrency, Financial Machine Learning, Behavioral Finance, and more to be explored during the Ph.D. program.
 
 ## Research Experience
 <ins>Research Assistant supervised by <a href="https://faculty.mccombs.utexas.edu/aydogan.alti/" target="_blank">Prof. Aydoğan Alti</a></ins> 2023-Present
