@@ -76,7 +76,7 @@ with <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=179" target="_bla
 <ins>Office</ins>: CBA 1.312J  
 <ins>Phone</ins>: +1 (512) 632-9383  
 <ins>Email</ins>: <a href="mailto:zirui.wang@mccombs.utexas.edu" target="_blank">zirui.wang@mccombs.utexas.edu</a>  
-<ins>Website</ins>: [www.wang-zirui.com](https://www.wang-zirui.com/)
+<ins>Website</ins>: [www.zirui-wang.com](https://www.zirui-wang.com/)
 
 <ins>Address</ins>:  
 UT Austin, McCombs School of Business  
