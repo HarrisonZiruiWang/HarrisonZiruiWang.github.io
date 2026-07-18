@@ -1044,7 +1044,7 @@ h1 {
   border: 1px solid rgba(130, 102, 83, 0.12);
   border-radius: 10px;
   background: var(--card-bg);
-  box-shadow: 0 8px 22px rgba(16, 40, 66, 0.045);
+  box-shadow: 0 6px 13px rgba(16, 40, 66, 0.05);
   color: #34465a;
   flex: 0 0 clamp(290px, 39vw, 410px);
   font-family: "Segoe Print", "Bradley Hand", "Marker Felt", "Comic Sans MS", "Comic Neue", cursive;
@@ -1059,7 +1059,7 @@ h1 {
 .comments blockquote:hover {
   background: var(--card-hover-bg);
   border-color: color-mix(in srgb, var(--ink) 18%, transparent);
-  box-shadow: 0 14px 28px rgba(16, 40, 66, 0.1);
+  box-shadow: 0 8px 14px rgba(16, 40, 66, 0.12);
   filter: saturate(0.97) contrast(1.01);
   translate: 0 -4px;
 }
@@ -1421,10 +1421,6 @@ h1 {
   .paper-copy,
   .figure-gallery {
     grid-column: 1 / -1;
-  }
-
-  .paper-copy h3 {
-    grid-column: 2;
   }
 
   .gallery-stage {

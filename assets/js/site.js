@@ -29,6 +29,12 @@
       closeMenu();
     });
 
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || siteNavigation.dataset.open !== 'true') return;
+      closeMenu();
+      menuButton.focus();
+    });
+
     window.addEventListener('resize', () => {
       if (window.innerWidth > 760) closeMenu();
     });
@@ -292,6 +298,12 @@
 
     track.addEventListener('pointermove', (event) => {
       if (dragPointerId !== event.pointerId) return;
+      if ((event.buttons & 1) === 0) {
+        // The button was released outside the window; end the stale drag.
+        dragPointerId = null;
+        track.classList.remove('is-dragging');
+        return;
+      }
       const delta = event.clientX - dragStartX;
       if (!track.classList.contains('is-dragging')) {
         if (Math.abs(delta) < 4) return;
