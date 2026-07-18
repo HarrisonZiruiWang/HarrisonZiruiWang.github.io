@@ -596,12 +596,18 @@ h1 {
 }
 
 .paper-copy h3 a {
-  text-decoration: none;
-  transition: color 480ms var(--ease-gentle);
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+  transition: color 480ms var(--ease-gentle), text-decoration-color 520ms var(--ease-gentle), transform 560ms var(--ease-gentle);
 }
 
 .paper-copy h3 a:hover {
   color: var(--accent);
+  text-decoration-color: currentColor;
+  transform: translateY(-2px);
 }
 
 .coauthors {
@@ -628,7 +634,7 @@ h1 {
 .paper-actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
   gap: 8px 22px;
 }
 
@@ -743,6 +749,7 @@ h1 {
 .gallery-stage {
   position: relative;
   min-height: 370px;
+  touch-action: pan-y;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #ffffff;
@@ -1039,7 +1046,7 @@ h1 {
   box-shadow: 0 8px 22px rgba(16, 40, 66, 0.045);
   color: #34465a;
   flex: 0 0 clamp(290px, 39vw, 410px);
-  font-family: "Segoe Print", "Bradley Hand ITC", "Comic Sans MS", cursive;
+  font-family: "Segoe Print", "Bradley Hand", "Marker Felt", "Comic Sans MS", "Comic Neue", cursive;
   font-size: 0.96rem;
   font-style: normal;
   line-height: 1.72;
@@ -1057,66 +1064,66 @@ h1 {
 }
 
 .comments blockquote[data-comment-size="short"] {
-  font-size: 1.13rem;
-  line-height: 1.64;
+  font-size: 1.3rem;
+  line-height: 1.58;
 }
 
 .comments blockquote[data-comment-size="medium"] {
-  font-size: 1.08rem;
-  line-height: 1.68;
+  font-size: 1.25rem;
+  line-height: 1.6;
 }
 
 .comments blockquote[data-comment-size="long"] {
-  font-size: 1.02rem;
-  line-height: 1.66;
+  font-size: 1.12rem;
+  line-height: 1.62;
 }
 
 .comments blockquote:nth-child(8n + 2) {
   --card-bg: #e2e3d4;
   --card-hover-bg: #daddc7;
-  font-family: "Segoe Script", "Lucida Handwriting", "Segoe Print", cursive;
+  font-family: "Segoe Script", "Snell Roundhand", "Apple Chancery", "Lucida Handwriting", cursive;
   transform: rotate(0.22deg);
 }
 
 .comments blockquote:nth-child(8n + 3) {
   --card-bg: #ead8cf;
   --card-hover-bg: #e5cdc0;
-  font-family: "Bradley Hand ITC", "Segoe Print", "Comic Sans MS", cursive;
+  font-family: "Bradley Hand ITC", "Bradley Hand", Noteworthy, "Segoe Print", "Comic Sans MS", cursive;
   transform: rotate(-0.1deg);
 }
 
 .comments blockquote:nth-child(8n + 4) {
   --card-bg: #e5ddcd;
   --card-hover-bg: #ded2bc;
-  font-family: "Ink Free", "Segoe Print", cursive;
+  font-family: "Ink Free", Noteworthy, "Marker Felt", "Segoe Print", cursive;
   transform: rotate(0.14deg);
 }
 
 .comments blockquote:nth-child(8n + 5) {
   --card-bg: #e1d9cc;
   --card-hover-bg: #d9cebd;
-  font-family: "Lucida Handwriting", "Segoe Script", cursive;
+  font-family: "Lucida Handwriting", "Apple Chancery", "Snell Roundhand", "Segoe Script", cursive;
   transform: rotate(-0.2deg);
 }
 
 .comments blockquote:nth-child(8n + 6) {
   --card-bg: #e4e3d6;
   --card-hover-bg: #daddcc;
-  font-family: "MV Boli", "Segoe Print", cursive;
+  font-family: "MV Boli", "Chalkboard SE", "Comic Sans MS", "Segoe Print", cursive;
   transform: rotate(0.1deg);
 }
 
 .comments blockquote:nth-child(8n + 7) {
   --card-bg: #ecdac9;
   --card-hover-bg: #e4cdb8;
-  font-family: Gabriola, "Segoe Script", cursive;
+  font-family: Gabriola, "Snell Roundhand", "Apple Chancery", "Segoe Script", cursive;
   transform: rotate(-0.12deg);
 }
 
 .comments blockquote:nth-child(8n) {
   --card-bg: #dfe2d7;
   --card-hover-bg: #d5dacd;
-  font-family: "Comic Sans MS", "Segoe Print", cursive;
+  font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", "Segoe Print", cursive;
   transform: rotate(0.18deg);
 }
 

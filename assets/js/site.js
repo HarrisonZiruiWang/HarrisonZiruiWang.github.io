@@ -112,10 +112,17 @@
       }, 1800);
     };
 
-    const moveManually = (index) => {
+    let resumeTimer = null;
+
+    const moveManually = (index, resumeDelay) => {
       stopRotation();
+      window.clearTimeout(resumeTimer);
       showSlide(index);
-      startRotation();
+      if (resumeDelay) {
+        resumeTimer = window.setTimeout(startRotation, resumeDelay);
+      } else {
+        startRotation();
+      }
     };
 
     previousButton.addEventListener('click', () => moveManually(currentIndex - 1));
@@ -124,6 +131,29 @@
     gallery.addEventListener('keydown', (event) => {
       if (event.key === 'ArrowLeft') moveManually(currentIndex - 1);
       if (event.key === 'ArrowRight') moveManually(currentIndex + 1);
+    });
+
+    const stage = gallery.querySelector('.gallery-stage');
+    let swipeStartX = null;
+    let swipeStartY = null;
+
+    stage.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse') return;
+      swipeStartX = event.clientX;
+      swipeStartY = event.clientY;
+    });
+
+    stage.addEventListener('pointerup', (event) => {
+      if (event.pointerType === 'mouse' || swipeStartX === null) return;
+      const deltaX = event.clientX - swipeStartX;
+      const deltaY = event.clientY - swipeStartY;
+      swipeStartX = null;
+      if (Math.abs(deltaX) < 40 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+      moveManually(currentIndex + (deltaX < 0 ? 1 : -1), 10000);
+    });
+
+    stage.addEventListener('pointercancel', () => {
+      swipeStartX = null;
     });
 
     showSlide(0);
