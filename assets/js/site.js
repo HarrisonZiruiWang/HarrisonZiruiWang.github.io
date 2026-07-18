@@ -1,18 +1,21 @@
 (function () {
   'use strict';
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const menuButton = document.querySelector('.menu-button');
   const siteNavigation = document.querySelector('.site-nav');
+  const closeMenu = () => {
+    if (!menuButton || !siteNavigation) return;
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open menu');
+    siteNavigation.dataset.open = 'false';
+  };
 
   if (menuButton && siteNavigation) {
-    const closeMenu = () => {
-      menuButton.setAttribute('aria-expanded', 'false');
-      siteNavigation.dataset.open = 'false';
-    };
-
     menuButton.addEventListener('click', () => {
       const willOpen = menuButton.getAttribute('aria-expanded') !== 'true';
       menuButton.setAttribute('aria-expanded', String(willOpen));
+      menuButton.setAttribute('aria-label', willOpen ? 'Close menu' : 'Open menu');
       siteNavigation.dataset.open = String(willOpen);
     });
 
@@ -20,10 +23,47 @@
       link.addEventListener('click', closeMenu);
     });
 
+    document.addEventListener('click', (event) => {
+      if (siteNavigation.dataset.open !== 'true') return;
+      if (menuButton.contains(event.target) || siteNavigation.contains(event.target)) return;
+      closeMenu();
+    });
+
     window.addEventListener('resize', () => {
       if (window.innerWidth > 760) closeMenu();
     });
   }
+
+  const siteHeader = document.querySelector('.site-header');
+
+  if (siteHeader) {
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY;
+      const menuOpen = siteNavigation && siteNavigation.dataset.open === 'true';
+
+      if (currentY <= siteHeader.offsetHeight || menuOpen) {
+        siteHeader.classList.remove('is-hidden');
+      } else if (currentY > lastScrollY + 2) {
+        siteHeader.classList.add('is-hidden');
+      } else if (currentY < lastScrollY - 2) {
+        siteHeader.classList.remove('is-hidden');
+      }
+
+      lastScrollY = currentY;
+    }, { passive: true });
+  }
+
+  document.querySelectorAll('a[href="#top"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      if (window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    });
+  });
 
   document.querySelectorAll('[data-abstract-toggle]').forEach((button) => {
     const panel = document.querySelector(`#${button.getAttribute('aria-controls')}`);
@@ -106,7 +146,7 @@
 
     cards.forEach((card) => {
       const commentLength = card.textContent.trim().length;
-      card.dataset.commentSize = commentLength <= 115 ? 'short' : commentLength >= 220 ? 'long' : 'medium';
+      card.dataset.commentSize = commentLength <= 115 ? 'short' : commentLength >= 300 ? 'long' : 'medium';
       const beforeClone = card.cloneNode(true);
       const afterClone = card.cloneNode(true);
       beforeClone.dataset.commentClone = 'before';
@@ -193,6 +233,42 @@
     track.addEventListener('scroll', () => {
       if (Math.abs(track.scrollLeft - scrollPosition) > 1) scrollPosition = track.scrollLeft;
     }, { passive: true });
+
+    let dragPointerId = null;
+    let dragStartX = 0;
+    let dragStartScroll = 0;
+
+    track.addEventListener('pointerdown', (event) => {
+      if (event.pointerType !== 'mouse' || event.button !== 0) return;
+      dragPointerId = event.pointerId;
+      dragStartX = event.clientX;
+      dragStartScroll = track.scrollLeft;
+    });
+
+    track.addEventListener('pointermove', (event) => {
+      if (dragPointerId !== event.pointerId) return;
+      const delta = event.clientX - dragStartX;
+      if (!track.classList.contains('is-dragging')) {
+        if (Math.abs(delta) < 4) return;
+        track.classList.add('is-dragging');
+        try {
+          track.setPointerCapture(dragPointerId);
+        } catch (error) {
+          /* pointer capture is a nice-to-have; dragging still works without it */
+        }
+      }
+      track.scrollLeft = dragStartScroll - delta;
+      scrollPosition = track.scrollLeft;
+    });
+
+    const endDrag = (event) => {
+      if (dragPointerId !== event.pointerId) return;
+      dragPointerId = null;
+      track.classList.remove('is-dragging');
+    };
+
+    track.addEventListener('pointerup', endDrag);
+    track.addEventListener('pointercancel', endDrag);
 
     window.addEventListener('resize', measureLoop);
     measureLoop();

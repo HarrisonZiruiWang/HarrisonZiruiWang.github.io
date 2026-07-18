@@ -137,6 +137,11 @@ a:hover {
   background: color-mix(in srgb, var(--page) 91%, transparent);
   backdrop-filter: blur(18px);
   font-family: var(--serif);
+  transition: transform 460ms var(--ease-gentle);
+}
+
+.site-header.is-hidden {
+  transform: translateY(-101%);
 }
 
 .header-inner {
@@ -179,6 +184,13 @@ a:hover {
 .social-nav a {
   font-family: var(--serif);
   font-size: 0.91rem;
+}
+
+.site-nav a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
 .site-nav a::after,
@@ -232,9 +244,7 @@ a:hover {
 
 .social-nav a:hover,
 .social-icon-nav a:hover {
-  background: color-mix(in srgb, var(--ink) 7%, transparent);
   color: var(--ink);
-  box-shadow: 0 9px 20px rgba(16, 40, 66, 0.08);
   transform: translateY(-2px);
 }
 
@@ -271,19 +281,62 @@ a:hover {
 
 .menu-button {
   display: none;
+  width: 40px;
+  height: 40px;
   border: 0;
   background: transparent;
   color: var(--ink);
   cursor: pointer;
-  font-family: var(--serif);
-  font-size: 0.86rem;
-  font-weight: 600;
-  transition: color 480ms var(--ease-gentle), transform 560ms var(--ease-gentle);
+  place-items: center;
+  justify-self: end;
+  transition: color 480ms var(--ease-gentle);
 }
 
 .menu-button:hover {
   color: var(--accent);
-  transform: translateY(-1px);
+}
+
+.menu-icon {
+  position: relative;
+  width: 20px;
+  height: 14px;
+  display: block;
+}
+
+.menu-icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: top 340ms var(--ease-gentle), transform 340ms var(--ease-gentle), opacity 240ms var(--ease-gentle);
+}
+
+.menu-icon span:nth-child(1) {
+  top: 0;
+}
+
+.menu-icon span:nth-child(2) {
+  top: 6px;
+}
+
+.menu-icon span:nth-child(3) {
+  top: 12px;
+}
+
+.menu-button[aria-expanded="true"] .menu-icon span:nth-child(1) {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.menu-button[aria-expanded="true"] .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button[aria-expanded="true"] .menu-icon span:nth-child(3) {
+  top: 6px;
+  transform: rotate(-45deg);
 }
 
 .hero {
@@ -483,6 +536,7 @@ h1 {
 }
 
 #teaching {
+  padding-block-end: 56px;
   background: var(--surface-soft);
   box-shadow: 0 0 0 100vmax var(--surface-soft);
   clip-path: inset(0 -100vmax);
@@ -542,34 +596,12 @@ h1 {
 }
 
 .paper-copy h3 a {
-  width: fit-content;
-  display: block;
   text-decoration: none;
   transition: color 480ms var(--ease-gentle);
 }
 
 .paper-copy h3 a:hover {
   color: var(--accent);
-}
-
-.paper-title-line {
-  width: fit-content;
-  max-width: 100%;
-  padding-bottom: 2px;
-  display: block;
-  background-image: linear-gradient(currentColor, currentColor), linear-gradient(var(--line-strong), var(--line-strong));
-  background-position: 0 100%, 0 100%;
-  background-repeat: no-repeat;
-  background-size: 0 1px, 100% 1px;
-  transition: background-size 520ms var(--ease-gentle);
-}
-
-.paper-copy h3 a:hover .paper-title-line {
-  background-size: 100% 1px, 100% 1px;
-}
-
-.paper-copy h3 a:hover .paper-title-line:nth-child(2) {
-  transition-delay: 150ms;
 }
 
 .coauthors {
@@ -607,7 +639,7 @@ h1 {
   background-position: 100% 100%;
   background-repeat: no-repeat;
   background-size: 0 1px;
-  color: var(--ink-soft);
+  color: var(--ink);
   cursor: pointer;
   padding: 3px 0;
   font-size: 0.76rem;
@@ -623,7 +655,7 @@ h1 {
   background-position: 100% 100%;
   background-repeat: no-repeat;
   background-size: 0 1px;
-  color: var(--ink-soft);
+  color: var(--ink);
   padding: 3px 0;
   font-size: 0.76rem;
   font-weight: 650;
@@ -875,16 +907,6 @@ h1 {
   margin: 0;
 }
 
-.course-meta-line {
-  display: flex;
-  align-items: baseline;
-  gap: 9px;
-}
-
-.course-meta-line small {
-  font-size: 0.74rem;
-}
-
 .course-resource {
   flex: 0 0 auto;
   color: var(--ink-soft);
@@ -964,9 +986,10 @@ h1 {
 
 .comments-track {
   width: 100vw;
-  max-height: 520px;
+  max-height: 560px;
   margin-left: calc(50% - 50vw);
-  padding: 18px max(18px, calc((100vw - var(--max-width)) / 2)) 44px;
+  padding: 18px max(18px, calc((100vw - var(--max-width)) / 2)) 22px;
+  cursor: grab;
   display: flex;
   gap: 18px;
   overflow-x: auto;
@@ -989,6 +1012,15 @@ h1 {
   pointer-events: none;
   visibility: hidden;
   transition: max-height 680ms var(--ease-gentle), opacity 420ms var(--ease-gentle), padding 680ms var(--ease-gentle), visibility 0s linear 680ms;
+}
+
+.comments-track.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.comments-track.is-dragging blockquote {
+  pointer-events: none;
 }
 
 .comments-track::-webkit-scrollbar {
@@ -1025,17 +1057,17 @@ h1 {
 }
 
 .comments blockquote[data-comment-size="short"] {
-  font-size: 1.08rem;
+  font-size: 1.13rem;
   line-height: 1.64;
 }
 
 .comments blockquote[data-comment-size="medium"] {
-  font-size: 1.03rem;
-  line-height: 1.7;
+  font-size: 1.08rem;
+  line-height: 1.68;
 }
 
 .comments blockquote[data-comment-size="long"] {
-  font-size: 1rem;
+  font-size: 1.02rem;
   line-height: 1.66;
 }
 
@@ -1184,9 +1216,7 @@ h1 {
 }
 
 .site-footer .social-icon-nav a:hover {
-  background: rgba(247, 242, 232, 0.1);
   color: #ffffff;
-  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.14);
 }
 
 .footer-bottom {
@@ -1285,25 +1315,39 @@ h1 {
   }
 
   .js .menu-button {
-    display: block;
+    display: grid;
   }
 
   .js .site-nav {
     position: absolute;
-    top: calc(100% + 1px);
-    right: -18px;
-    left: -18px;
-    padding: 18px;
-    border-bottom: 1px solid var(--line);
+    top: calc(100% + 10px);
+    right: 0;
+    left: auto;
+    z-index: 60;
+    min-width: 176px;
+    padding: 16px 20px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
     background: var(--page);
-    display: none;
+    box-shadow: 0 18px 38px rgba(16, 40, 66, 0.12);
+    display: flex;
     align-items: flex-start;
     flex-direction: column;
     gap: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top right;
+    visibility: hidden;
+    transition: opacity 280ms var(--ease-gentle), transform 340ms var(--ease-gentle), visibility 0s linear 340ms;
   }
 
   .js .site-nav[data-open="true"] {
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    visibility: visible;
+    transition: opacity 280ms var(--ease-gentle), transform 340ms var(--ease-gentle), visibility 0s linear 0s;
   }
 
   .hero {
