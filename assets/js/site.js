@@ -176,7 +176,7 @@
 
     cards.forEach((card) => {
       const commentLength = card.textContent.trim().length;
-      card.dataset.commentSize = commentLength <= 115 ? 'short' : commentLength >= 300 ? 'long' : 'medium';
+      card.dataset.commentSize = commentLength <= 115 ? 'short' : commentLength >= 280 ? 'long' : 'medium';
       const beforeClone = card.cloneNode(true);
       const afterClone = card.cloneNode(true);
       beforeClone.dataset.commentClone = 'before';
@@ -260,13 +260,28 @@
       if (event.key === 'ArrowRight') track.scrollBy({ left: step, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
 
-    track.addEventListener('scroll', () => {
-      if (Math.abs(track.scrollLeft - scrollPosition) > 1) scrollPosition = track.scrollLeft;
-    }, { passive: true });
-
     let dragPointerId = null;
     let dragStartX = 0;
     let dragStartScroll = 0;
+
+    // Keep the scroll offset inside the middle copy of the three identical card
+    // runs so the track can never reach a physical end, however it is scrolled.
+    const wrapScrollPosition = () => {
+      if (loopPoint <= 0) return;
+      let shift = 0;
+      if (scrollPosition < loopPoint) shift = loopPoint;
+      else if (scrollPosition >= loopPoint * 2) shift = -loopPoint;
+      if (shift !== 0) {
+        scrollPosition += shift;
+        dragStartScroll += shift;
+        track.scrollLeft = scrollPosition;
+      }
+    };
+
+    track.addEventListener('scroll', () => {
+      if (Math.abs(track.scrollLeft - scrollPosition) > 1) scrollPosition = track.scrollLeft;
+      wrapScrollPosition();
+    }, { passive: true });
 
     track.addEventListener('pointerdown', (event) => {
       if (event.pointerType !== 'mouse' || event.button !== 0) return;
@@ -289,6 +304,7 @@
       }
       track.scrollLeft = dragStartScroll - delta;
       scrollPosition = track.scrollLeft;
+      wrapScrollPosition();
     });
 
     const endDrag = (event) => {

@@ -1037,9 +1037,10 @@ h1 {
 .comments blockquote {
   --card-bg: #eadfc9;
   --card-hover-bg: #e5d5b9;
-  min-height: 205px;
+  min-height: 150px;
   margin: 0;
-  padding: 28px;
+  padding: 22px 24px;
+  font-size-adjust: 0.5;
   border: 1px solid rgba(130, 102, 83, 0.12);
   border-radius: 10px;
   background: var(--card-bg);
@@ -1065,17 +1066,17 @@ h1 {
 
 .comments blockquote[data-comment-size="short"] {
   font-size: 1.3rem;
-  line-height: 1.58;
+  line-height: 1.55;
 }
 
 .comments blockquote[data-comment-size="medium"] {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.18rem;
+  line-height: 1.52;
 }
 
 .comments blockquote[data-comment-size="long"] {
-  font-size: 1.12rem;
-  line-height: 1.62;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .comments blockquote:nth-child(8n + 2) {
