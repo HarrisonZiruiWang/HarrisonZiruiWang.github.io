@@ -87,13 +87,35 @@
     const slides = Array.from(gallery.querySelectorAll('.gallery-slide'));
     const previousButton = gallery.querySelector('[data-previous]');
     const nextButton = gallery.querySelector('[data-next]');
+    const toggleButton = gallery.querySelector('[data-gallery-toggle]');
     const count = gallery.querySelector('.gallery-count');
+    const stage = gallery.querySelector('.gallery-stage');
+    if (!slides.length || !previousButton || !nextButton || !count || !stage) return;
+
     let currentIndex = 0;
     let rotationTimer = null;
+    let resumeTimer = null;
+    let userPaused = false;
     const canAutoRotate = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const loadSlideImage = (index) => {
+      const image = slides[(index + slides.length) % slides.length].querySelector('img[data-src]');
+      if (!image) return;
+      image.src = image.dataset.src;
+      image.removeAttribute('data-src');
+    };
+
+    const preloadNextSlide = () => {
+      if (!canAutoRotate || userPaused || slides.length < 2) return;
+      window.setTimeout(() => {
+        if (!canAutoRotate || userPaused) return;
+        loadSlideImage(currentIndex + 1);
+      }, 0);
+    };
 
     const showSlide = (index) => {
       currentIndex = (index + slides.length) % slides.length;
+      loadSlideImage(currentIndex);
 
       slides.forEach((slide, slideIndex) => {
         const isActive = slideIndex === currentIndex;
@@ -102,6 +124,7 @@
       });
 
       count.textContent = `${currentIndex + 1} / ${slides.length}`;
+      preloadNextSlide();
     };
 
     const stopRotation = () => {
@@ -112,34 +135,63 @@
     const isInteracting = () => gallery.matches(':hover') || Boolean(gallery.querySelector(':focus-visible'));
 
     const startRotation = () => {
-      if (!canAutoRotate || slides.length < 2 || rotationTimer) return;
+      if (!canAutoRotate || userPaused || slides.length < 2 || rotationTimer) return;
       rotationTimer = window.setInterval(() => {
         if (!document.hidden && !isInteracting()) showSlide(currentIndex + 1);
       }, 1800);
     };
 
-    let resumeTimer = null;
+    const updateRotationControl = () => {
+      if (!toggleButton) return;
+
+      if (!canAutoRotate) {
+        toggleButton.disabled = true;
+        toggleButton.textContent = 'Paused';
+        toggleButton.setAttribute('aria-pressed', 'true');
+        toggleButton.setAttribute('aria-label', 'Automatic figure rotation disabled by reduced motion preference');
+        return;
+      }
+
+      toggleButton.disabled = false;
+      toggleButton.textContent = userPaused ? 'Play' : 'Pause';
+      toggleButton.setAttribute('aria-pressed', String(userPaused));
+      toggleButton.setAttribute('aria-label', userPaused ? 'Resume automatic figure rotation' : 'Pause automatic figure rotation');
+    };
+
+    const setUserPaused = (paused) => {
+      userPaused = paused;
+      window.clearTimeout(resumeTimer);
+      if (userPaused) {
+        stopRotation();
+      } else {
+        startRotation();
+        preloadNextSlide();
+      }
+      updateRotationControl();
+    };
 
     const moveManually = (index, resumeDelay) => {
       stopRotation();
       window.clearTimeout(resumeTimer);
       showSlide(index);
-      if (resumeDelay) {
-        resumeTimer = window.setTimeout(startRotation, resumeDelay);
-      } else {
-        startRotation();
+      if (!userPaused) {
+        if (resumeDelay) {
+          resumeTimer = window.setTimeout(startRotation, resumeDelay);
+        } else {
+          startRotation();
+        }
       }
     };
 
     previousButton.addEventListener('click', () => moveManually(currentIndex - 1));
     nextButton.addEventListener('click', () => moveManually(currentIndex + 1));
+    if (toggleButton) toggleButton.addEventListener('click', () => setUserPaused(!userPaused));
 
     gallery.addEventListener('keydown', (event) => {
       if (event.key === 'ArrowLeft') moveManually(currentIndex - 1);
       if (event.key === 'ArrowRight') moveManually(currentIndex + 1);
     });
 
-    const stage = gallery.querySelector('.gallery-stage');
     let swipeStartX = null;
     let swipeStartY = null;
 
@@ -176,6 +228,7 @@
     });
 
     showSlide(0);
+    updateRotationControl();
     startRotation();
   });
 
