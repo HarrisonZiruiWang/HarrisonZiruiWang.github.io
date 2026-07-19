@@ -749,6 +749,7 @@ h1 {
 .gallery-stage {
   position: relative;
   min-height: 370px;
+  cursor: grab;
   touch-action: pan-y;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -756,6 +757,10 @@ h1 {
   box-shadow: 0 8px 22px rgba(16, 40, 66, 0.035);
   overflow: hidden;
   transition: box-shadow 760ms var(--ease-gentle), transform 760ms var(--ease-gentle), border-color 560ms var(--ease-gentle);
+}
+
+.gallery-stage:active {
+  cursor: grabbing;
 }
 
 .figure-gallery:hover .gallery-stage,
@@ -997,6 +1002,7 @@ h1 {
   margin-left: calc(50% - 50vw);
   padding: 18px max(18px, calc((100vw - var(--max-width)) / 2)) 22px;
   cursor: grab;
+  touch-action: pan-y;
   display: flex;
   gap: 18px;
   overflow-x: auto;

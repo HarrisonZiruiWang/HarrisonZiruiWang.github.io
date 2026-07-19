@@ -143,14 +143,27 @@
     let swipeStartX = null;
     let swipeStartY = null;
 
+    stage.addEventListener('dragstart', (event) => {
+      event.preventDefault();
+    });
+
     stage.addEventListener('pointerdown', (event) => {
-      if (event.pointerType === 'mouse') return;
+      if (event.pointerType === 'mouse') {
+        if (event.button !== 0) return;
+        // Keep a mouse drag from selecting text or dragging the figure image.
+        event.preventDefault();
+        try {
+          stage.setPointerCapture(event.pointerId);
+        } catch (error) {
+          /* capture is a nice-to-have */
+        }
+      }
       swipeStartX = event.clientX;
       swipeStartY = event.clientY;
     });
 
     stage.addEventListener('pointerup', (event) => {
-      if (event.pointerType === 'mouse' || swipeStartX === null) return;
+      if (swipeStartX === null) return;
       const deltaX = event.clientX - swipeStartX;
       const deltaY = event.clientY - swipeStartY;
       swipeStartX = null;
@@ -242,7 +255,7 @@
       const elapsed = Math.min(time - lastFrameTime, 1000);
       lastFrameTime = time;
 
-      if (!isPaused() && !isInteracting() && !document.hidden && loopPoint > 0) {
+      if (!isPaused() && !isInteracting() && !document.hidden && loopPoint > 0 && dragPointerId === null && momentumFrame === null) {
         scrollPosition += elapsed * 0.022;
         if (scrollPosition >= bandHigh()) scrollPosition -= loopPoint;
         if (scrollPosition < bandLow()) scrollPosition += loopPoint;
@@ -282,8 +295,10 @@
     let dragPointerId = null;
     let dragStartX = 0;
     let dragStartScroll = 0;
-    let touchActive = false;
-    let settleTimer = null;
+    let momentumFrame = null;
+    let momentumVelocity = 0;
+    let momentumLastTime = null;
+    const dragSamples = [];
 
     // Bring the scroll offset back into the middle copy of the identical card
     // runs. Jumps land on visually identical content, so a wrap is invisible.
@@ -303,49 +318,56 @@
       }
     };
 
-    // Touch scrolling is driven by the browser: repositioning the track while a
-    // finger is down (or a fling is running) fights the gesture and flashes
-    // unpainted content. Instead, wrap once scrolling has settled, and only
-    // force an immediate wrap if the position strays near a physical end.
-    const scheduleSettledWrap = () => {
-      window.clearTimeout(settleTimer);
-      settleTimer = window.setTimeout(() => {
-        if (!touchActive && dragPointerId === null) wrapScrollPosition();
-      }, 140);
-    };
-
+    // Native horizontal touch panning is disabled via touch-action: pan-y, so
+    // every finger or mouse drag runs through the pointer handlers below and
+    // the wrap can be applied on every frame without fighting the browser.
+    // Wheel and keyboard scrolling stay native: they apply deltas from the
+    // current position, so an immediate wrap is safe for them.
     track.addEventListener('scroll', () => {
+      if (dragPointerId !== null || momentumFrame !== null) return;
       if (Math.abs(track.scrollLeft - scrollPosition) > 1) scrollPosition = track.scrollLeft;
-      if (dragPointerId !== null) return;
-      if (loopPoint > 0 && (scrollPosition < loopPoint * 0.5 || scrollPosition >= loopPoint * (cloneSets * 2 + 0.5))) {
-        wrapScrollPosition();
-        return;
-      }
-      scheduleSettledWrap();
+      wrapScrollPosition();
     }, { passive: true });
 
-    track.addEventListener('touchstart', () => {
-      touchActive = true;
-    }, { passive: true });
-
-    const endTouch = () => {
-      touchActive = false;
-      scheduleSettledWrap();
+    const stopMomentum = () => {
+      if (momentumFrame !== null) window.cancelAnimationFrame(momentumFrame);
+      momentumFrame = null;
+      momentumVelocity = 0;
+      momentumLastTime = null;
     };
 
-    track.addEventListener('touchend', endTouch, { passive: true });
-    track.addEventListener('touchcancel', endTouch, { passive: true });
+    const momentumStep = (time) => {
+      momentumFrame = null;
+      if (momentumLastTime === null) momentumLastTime = time;
+      const elapsed = Math.min(time - momentumLastTime, 100);
+      momentumLastTime = time;
+      scrollPosition += momentumVelocity * elapsed;
+      momentumVelocity *= Math.exp(-elapsed / 325);
+      track.scrollLeft = scrollPosition;
+      wrapScrollPosition();
+      if (Math.abs(momentumVelocity) > 0.02) {
+        momentumFrame = window.requestAnimationFrame(momentumStep);
+      } else {
+        stopMomentum();
+      }
+    };
+
+    track.addEventListener('wheel', stopMomentum, { passive: true });
 
     track.addEventListener('pointerdown', (event) => {
-      if (event.pointerType !== 'mouse' || event.button !== 0) return;
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      stopMomentum();
       dragPointerId = event.pointerId;
       dragStartX = event.clientX;
       dragStartScroll = track.scrollLeft;
+      scrollPosition = track.scrollLeft;
+      dragSamples.length = 0;
+      dragSamples.push({ x: event.clientX, time: performance.now() });
     });
 
     track.addEventListener('pointermove', (event) => {
       if (dragPointerId !== event.pointerId) return;
-      if ((event.buttons & 1) === 0) {
+      if (event.pointerType === 'mouse' && (event.buttons & 1) === 0) {
         // The button was released outside the window; end the stale drag.
         dragPointerId = null;
         track.classList.remove('is-dragging');
@@ -364,12 +386,30 @@
       track.scrollLeft = dragStartScroll - delta;
       scrollPosition = track.scrollLeft;
       wrapScrollPosition();
+      dragSamples.push({ x: event.clientX, time: performance.now() });
+      while (dragSamples.length > 6) dragSamples.shift();
     });
 
     const endDrag = (event) => {
       if (dragPointerId !== event.pointerId) return;
+      const wasDragging = track.classList.contains('is-dragging');
       dragPointerId = null;
       track.classList.remove('is-dragging');
+      if (!wasDragging || event.type === 'pointercancel') return;
+
+      // Launch momentum from the velocity of the last few pointer samples.
+      const now = performance.now();
+      const recent = dragSamples.filter((sample) => now - sample.time < 120);
+      if (recent.length < 2) return;
+      const first = recent[0];
+      const last = recent[recent.length - 1];
+      if (last.time <= first.time) return;
+      const velocity = -(last.x - first.x) / (last.time - first.time);
+      momentumVelocity = Math.max(-4, Math.min(4, velocity));
+      if (Math.abs(momentumVelocity) > 0.05) {
+        momentumLastTime = null;
+        momentumFrame = window.requestAnimationFrame(momentumStep);
+      }
     };
 
     track.addEventListener('pointerup', endDrag);
