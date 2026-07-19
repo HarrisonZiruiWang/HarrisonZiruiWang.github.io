@@ -183,18 +183,31 @@
     cards.forEach((card) => {
       const commentLength = card.textContent.trim().length;
       card.dataset.commentSize = commentLength <= 115 ? 'short' : commentLength >= 280 ? 'long' : 'medium';
-      const beforeClone = card.cloneNode(true);
-      const afterClone = card.cloneNode(true);
-      beforeClone.dataset.commentClone = 'before';
-      afterClone.dataset.commentClone = 'after';
-      beforeClone.setAttribute('aria-hidden', 'true');
-      afterClone.setAttribute('aria-hidden', 'true');
-      beforeFragment.appendChild(beforeClone);
-      afterFragment.appendChild(afterClone);
     });
+
+    // Two identical copies of the cards on each side of the originals, so touch
+    // flings always have ample runway before any wrap-around is needed.
+    const cloneSets = 2;
+    for (let set = 0; set < cloneSets; set += 1) {
+      cards.forEach((card) => {
+        const beforeClone = card.cloneNode(true);
+        const afterClone = card.cloneNode(true);
+        beforeClone.dataset.commentClone = 'before';
+        afterClone.dataset.commentClone = 'after';
+        beforeClone.setAttribute('aria-hidden', 'true');
+        afterClone.setAttribute('aria-hidden', 'true');
+        beforeFragment.appendChild(beforeClone);
+        afterFragment.appendChild(afterClone);
+      });
+    }
 
     track.insertBefore(beforeFragment, cards[0]);
     track.appendChild(afterFragment);
+
+    // The originals sit in the middle copy, spanning roughly
+    // [cloneSets * loopPoint, (cloneSets + 1) * loopPoint) in scroll terms.
+    const bandLow = () => loopPoint * cloneSets;
+    const bandHigh = () => loopPoint * (cloneSets + 1);
 
     const measureLoop = () => {
       const previousLoopPoint = loopPoint;
@@ -202,11 +215,11 @@
       loopPoint = firstAfterClone ? firstAfterClone.offsetLeft - cards[0].offsetLeft : 0;
 
       if (!loopInitialized && loopPoint > 0) {
-        scrollPosition = loopPoint + (cards[0].offsetWidth * 0.42);
+        scrollPosition = bandLow() + (cards[0].offsetWidth * 0.42);
         loopInitialized = true;
       } else if (previousLoopPoint > 0 && loopPoint > 0) {
-        const progress = (scrollPosition - previousLoopPoint) / previousLoopPoint;
-        scrollPosition = loopPoint + ((((progress % 1) + 1) % 1) * loopPoint);
+        const progress = (scrollPosition - previousLoopPoint * cloneSets) / previousLoopPoint;
+        scrollPosition = bandLow() + ((((progress % 1) + 1) % 1) * loopPoint);
       }
 
       track.scrollLeft = scrollPosition;
@@ -231,8 +244,8 @@
 
       if (!isPaused() && !isInteracting() && !document.hidden && loopPoint > 0) {
         scrollPosition += elapsed * 0.022;
-        if (scrollPosition >= loopPoint * 2) scrollPosition -= loopPoint;
-        if (scrollPosition < loopPoint) scrollPosition += loopPoint;
+        if (scrollPosition >= bandHigh()) scrollPosition -= loopPoint;
+        if (scrollPosition < bandLow()) scrollPosition += loopPoint;
         track.scrollLeft = scrollPosition;
       }
 
@@ -269,14 +282,20 @@
     let dragPointerId = null;
     let dragStartX = 0;
     let dragStartScroll = 0;
+    let touchActive = false;
+    let settleTimer = null;
 
-    // Keep the scroll offset inside the middle copy of the three identical card
-    // runs so the track can never reach a physical end, however it is scrolled.
+    // Bring the scroll offset back into the middle copy of the identical card
+    // runs. Jumps land on visually identical content, so a wrap is invisible.
     const wrapScrollPosition = () => {
       if (loopPoint <= 0) return;
+      // Re-sync first: scroll events can be coalesced or missed entirely.
+      if (dragPointerId === null && Math.abs(track.scrollLeft - scrollPosition) > 1) {
+        scrollPosition = track.scrollLeft;
+      }
       let shift = 0;
-      if (scrollPosition < loopPoint) shift = loopPoint;
-      else if (scrollPosition >= loopPoint * 2) shift = -loopPoint;
+      while (scrollPosition + shift < bandLow()) shift += loopPoint;
+      while (scrollPosition + shift >= bandHigh()) shift -= loopPoint;
       if (shift !== 0) {
         scrollPosition += shift;
         dragStartScroll += shift;
@@ -284,10 +303,38 @@
       }
     };
 
+    // Touch scrolling is driven by the browser: repositioning the track while a
+    // finger is down (or a fling is running) fights the gesture and flashes
+    // unpainted content. Instead, wrap once scrolling has settled, and only
+    // force an immediate wrap if the position strays near a physical end.
+    const scheduleSettledWrap = () => {
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(() => {
+        if (!touchActive && dragPointerId === null) wrapScrollPosition();
+      }, 140);
+    };
+
     track.addEventListener('scroll', () => {
       if (Math.abs(track.scrollLeft - scrollPosition) > 1) scrollPosition = track.scrollLeft;
-      wrapScrollPosition();
+      if (dragPointerId !== null) return;
+      if (loopPoint > 0 && (scrollPosition < loopPoint * 0.5 || scrollPosition >= loopPoint * (cloneSets * 2 + 0.5))) {
+        wrapScrollPosition();
+        return;
+      }
+      scheduleSettledWrap();
     }, { passive: true });
+
+    track.addEventListener('touchstart', () => {
+      touchActive = true;
+    }, { passive: true });
+
+    const endTouch = () => {
+      touchActive = false;
+      scheduleSettledWrap();
+    };
+
+    track.addEventListener('touchend', endTouch, { passive: true });
+    track.addEventListener('touchcancel', endTouch, { passive: true });
 
     track.addEventListener('pointerdown', (event) => {
       if (event.pointerType !== 'mouse' || event.button !== 0) return;
