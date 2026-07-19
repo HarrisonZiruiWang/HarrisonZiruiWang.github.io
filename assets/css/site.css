@@ -1069,6 +1069,20 @@ h1 {
   translate: 0 -4px;
 }
 
+.comment-mark {
+  --mark-color: rgba(248, 217, 107, 0.58);
+  --mark-edge: rgba(248, 217, 107, 0.34);
+  padding-inline: 0.04em;
+  background:
+    linear-gradient(104deg, transparent 0.05em, var(--mark-color) 0.1em, var(--mark-edge) calc(100% - 0.1em), transparent calc(100% - 0.04em)),
+    linear-gradient(96deg, transparent 0.02em, rgba(255, 230, 124, 0.42) 0.08em, transparent calc(100% - 0.08em));
+  background-position: 0 72%, 0 88%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.48em, 100% 0.18em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 .comments blockquote[data-comment-size="short"] {
   font-size: 1.3rem;
   line-height: 1.55;
@@ -1087,14 +1101,14 @@ h1 {
 .comments blockquote:nth-child(8n + 2) {
   --card-bg: #e2e3d4;
   --card-hover-bg: #daddc7;
-  font-family: "Segoe Script", "Snell Roundhand", "Apple Chancery", "Lucida Handwriting", cursive;
+  font-family: "Segoe Script", "Apple Chancery", "Snell Roundhand", "Lucida Handwriting", cursive;
   transform: rotate(0.22deg);
 }
 
 .comments blockquote:nth-child(8n + 3) {
   --card-bg: #ead8cf;
   --card-hover-bg: #e5cdc0;
-  font-family: "Bradley Hand ITC", "Bradley Hand", Noteworthy, "Segoe Print", "Comic Sans MS", cursive;
+  font-family: "Bradley Hand ITC", "Marker Felt", "Bradley Hand", Noteworthy, "Segoe Print", "Comic Sans MS", cursive;
   transform: rotate(-0.1deg);
 }
 
@@ -1108,7 +1122,7 @@ h1 {
 .comments blockquote:nth-child(8n + 5) {
   --card-bg: #e1d9cc;
   --card-hover-bg: #d9cebd;
-  font-family: "Lucida Handwriting", "Apple Chancery", "Snell Roundhand", "Segoe Script", cursive;
+  font-family: "Lucida Handwriting", "Bradley Hand", "Snell Roundhand", "Apple Chancery", "Segoe Script", cursive;
   transform: rotate(-0.2deg);
 }
 
@@ -1122,7 +1136,7 @@ h1 {
 .comments blockquote:nth-child(8n + 7) {
   --card-bg: #ecdac9;
   --card-hover-bg: #e4cdb8;
-  font-family: Gabriola, "Snell Roundhand", "Apple Chancery", "Segoe Script", cursive;
+  font-family: Gabriola, "SignPainter", Noteworthy, "Snell Roundhand", "Apple Chancery", "Segoe Script", cursive;
   transform: rotate(-0.12deg);
 }
 
