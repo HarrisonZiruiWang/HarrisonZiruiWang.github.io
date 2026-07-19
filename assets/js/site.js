@@ -341,31 +341,42 @@
     // gesture has not moved yet) and once scrolling settles. Wheel and
     // keyboard input is delta-based, so it can be wrapped immediately.
     let touchInvolved = false;
+    let touchDown = false;
     let settleTimer = null;
 
+    // touchInvolved may only clear once the finger is up AND scrolling has
+    // gone quiet. Clearing it while a finger still rests on the cards would
+    // let the auto-roll fight the browser's touch anchor and jiggle the row.
     const settleWrap = () => {
       window.clearTimeout(settleTimer);
       settleTimer = window.setTimeout(() => {
+        if (touchDown) return;
         touchInvolved = false;
         wrapScrollPosition();
       }, 140);
     };
 
     track.addEventListener('touchstart', () => {
+      touchDown = true;
       touchInvolved = true;
       window.clearTimeout(settleTimer);
       stopMomentum();
       wrapScrollPosition();
     }, { passive: true });
 
-    track.addEventListener('touchend', settleWrap, { passive: true });
-    track.addEventListener('touchcancel', settleWrap, { passive: true });
+    const onTouchEnd = (event) => {
+      touchDown = Boolean(event.touches && event.touches.length > 0);
+      if (!touchDown) settleWrap();
+    };
+
+    track.addEventListener('touchend', onTouchEnd, { passive: true });
+    track.addEventListener('touchcancel', onTouchEnd, { passive: true });
 
     track.addEventListener('scroll', () => {
       if (dragPointerId !== null || momentumFrame !== null) return;
       if (Math.abs(track.scrollLeft - scrollPosition) > 1) scrollPosition = track.scrollLeft;
       if (touchInvolved) {
-        settleWrap();
+        if (!touchDown) settleWrap();
         return;
       }
       wrapScrollPosition();
