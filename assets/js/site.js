@@ -241,12 +241,22 @@
 
     const isPaused = () => reduceMotion || commentsHidden;
 
-    // Auto-roll resumes on its own a few seconds after any interaction ends,
-    // so lingering hover or focus can never leave the carousel stuck.
-    let resumeAt = 0;
-    const deferResume = () => {
-      resumeAt = performance.now() + 5000;
-    };
+    // Pause purely on hover: a real mouse pointer resting on the track holds
+    // the cards still, and moving it away resumes the roll immediately. Touch
+    // must not participate (mobile browsers emulate a sticky :hover after
+    // taps), so hover is tracked with mouse-only pointer events. Keyboard
+    // users pause via :focus-visible, which clicks and taps never set.
+    let mouseHovering = false;
+
+    track.addEventListener('pointerenter', (event) => {
+      if (event.pointerType === 'mouse') mouseHovering = true;
+    });
+
+    track.addEventListener('pointerleave', (event) => {
+      if (event.pointerType === 'mouse') mouseHovering = false;
+    });
+
+    const isHeldByUser = () => mouseHovering || track.matches(':focus-visible');
 
     const updateControls = () => {
       toggleButton.textContent = commentsHidden ? 'Show' : 'Hide';
@@ -262,7 +272,7 @@
       const elapsed = Math.min(time - lastFrameTime, 1000);
       lastFrameTime = time;
 
-      if (!isPaused() && !document.hidden && loopPoint > 0 && dragPointerId === null && momentumFrame === null && !touchInvolved && time >= resumeAt) {
+      if (!isPaused() && !document.hidden && loopPoint > 0 && dragPointerId === null && momentumFrame === null && !touchInvolved && !isHeldByUser()) {
         scrollPosition += elapsed * 0.022;
         if (scrollPosition >= bandHigh()) scrollPosition -= loopPoint;
         if (scrollPosition < bandLow()) scrollPosition += loopPoint;
@@ -296,7 +306,6 @@
     track.addEventListener('keydown', (event) => {
       const step = cards[0].offsetWidth + 18;
       if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-      deferResume();
       track.scrollBy({ left: event.key === 'ArrowLeft' ? -step : step, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
 
@@ -339,7 +348,6 @@
       settleTimer = window.setTimeout(() => {
         touchInvolved = false;
         wrapScrollPosition();
-        deferResume();
       }, 140);
     };
 
@@ -383,14 +391,10 @@
         momentumFrame = window.requestAnimationFrame(momentumStep);
       } else {
         stopMomentum();
-        deferResume();
       }
     };
 
-    track.addEventListener('wheel', () => {
-      stopMomentum();
-      deferResume();
-    }, { passive: true });
+    track.addEventListener('wheel', stopMomentum, { passive: true });
 
     track.addEventListener('pointerdown', (event) => {
       if (event.pointerType !== 'mouse' || event.button !== 0) return;
@@ -409,7 +413,6 @@
         // The button was released outside the window; end the stale drag.
         dragPointerId = null;
         track.classList.remove('is-dragging');
-        deferResume();
         return;
       }
       const delta = event.clientX - dragStartX;
@@ -434,7 +437,9 @@
       const wasDragging = track.classList.contains('is-dragging');
       dragPointerId = null;
       track.classList.remove('is-dragging');
-      deferResume();
+      // Pointer capture can swallow pointerleave, so re-check hover directly:
+      // a drag that ends with the cursor elsewhere must resume immediately.
+      if (event.pointerType === 'mouse') mouseHovering = track.matches(':hover');
       if (!wasDragging || event.type === 'pointercancel') return;
 
       // Launch momentum from the velocity of the last few pointer samples.
