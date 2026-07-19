@@ -168,7 +168,7 @@
       const deltaY = event.clientY - swipeStartY;
       swipeStartX = null;
       if (Math.abs(deltaX) < 40 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
-      moveManually(currentIndex + (deltaX < 0 ? 1 : -1), 10000);
+      moveManually(currentIndex + (deltaX < 0 ? 1 : -1), 5000);
     });
 
     stage.addEventListener('pointercancel', () => {
@@ -240,7 +240,13 @@
     };
 
     const isPaused = () => reduceMotion || commentsHidden;
-    const isInteracting = () => track.matches(':hover') || track.contains(document.activeElement);
+
+    // Auto-roll resumes on its own a few seconds after any interaction ends,
+    // so lingering hover or focus can never leave the carousel stuck.
+    let resumeAt = 0;
+    const deferResume = () => {
+      resumeAt = performance.now() + 5000;
+    };
 
     const updateControls = () => {
       toggleButton.textContent = commentsHidden ? 'Show' : 'Hide';
@@ -256,7 +262,7 @@
       const elapsed = Math.min(time - lastFrameTime, 1000);
       lastFrameTime = time;
 
-      if (!isPaused() && !isInteracting() && !document.hidden && loopPoint > 0 && dragPointerId === null && momentumFrame === null && !touchInvolved) {
+      if (!isPaused() && !document.hidden && loopPoint > 0 && dragPointerId === null && momentumFrame === null && !touchInvolved && time >= resumeAt) {
         scrollPosition += elapsed * 0.022;
         if (scrollPosition >= bandHigh()) scrollPosition -= loopPoint;
         if (scrollPosition < bandLow()) scrollPosition += loopPoint;
@@ -289,8 +295,9 @@
 
     track.addEventListener('keydown', (event) => {
       const step = cards[0].offsetWidth + 18;
-      if (event.key === 'ArrowLeft') track.scrollBy({ left: -step, behavior: reduceMotion ? 'auto' : 'smooth' });
-      if (event.key === 'ArrowRight') track.scrollBy({ left: step, behavior: reduceMotion ? 'auto' : 'smooth' });
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      deferResume();
+      track.scrollBy({ left: event.key === 'ArrowLeft' ? -step : step, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
 
     let dragPointerId = null;
@@ -332,6 +339,7 @@
       settleTimer = window.setTimeout(() => {
         touchInvolved = false;
         wrapScrollPosition();
+        deferResume();
       }, 140);
     };
 
@@ -375,10 +383,14 @@
         momentumFrame = window.requestAnimationFrame(momentumStep);
       } else {
         stopMomentum();
+        deferResume();
       }
     };
 
-    track.addEventListener('wheel', stopMomentum, { passive: true });
+    track.addEventListener('wheel', () => {
+      stopMomentum();
+      deferResume();
+    }, { passive: true });
 
     track.addEventListener('pointerdown', (event) => {
       if (event.pointerType !== 'mouse' || event.button !== 0) return;
@@ -397,6 +409,7 @@
         // The button was released outside the window; end the stale drag.
         dragPointerId = null;
         track.classList.remove('is-dragging');
+        deferResume();
         return;
       }
       const delta = event.clientX - dragStartX;
@@ -421,6 +434,7 @@
       const wasDragging = track.classList.contains('is-dragging');
       dragPointerId = null;
       track.classList.remove('is-dragging');
+      deferResume();
       if (!wasDragging || event.type === 'pointercancel') return;
 
       // Launch momentum from the velocity of the last few pointer samples.
