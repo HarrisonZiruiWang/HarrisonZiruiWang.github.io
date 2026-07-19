@@ -198,9 +198,10 @@
       card.dataset.commentSize = commentLength <= 115 ? 'short' : commentLength >= 280 ? 'long' : 'medium';
     });
 
-    // Two identical copies of the cards on each side of the originals, so touch
-    // flings always have ample runway before any wrap-around is needed.
-    const cloneSets = 2;
+    // Three identical copies of the cards on each side of the originals: a
+    // single native swipe plus its fling can never cover that distance, and
+    // the position is recentered on every touchstart and settle.
+    const cloneSets = 3;
     for (let set = 0; set < cloneSets; set += 1) {
       cards.forEach((card) => {
         const beforeClone = card.cloneNode(true);
@@ -255,7 +256,7 @@
       const elapsed = Math.min(time - lastFrameTime, 1000);
       lastFrameTime = time;
 
-      if (!isPaused() && !isInteracting() && !document.hidden && loopPoint > 0 && dragPointerId === null && momentumFrame === null) {
+      if (!isPaused() && !isInteracting() && !document.hidden && loopPoint > 0 && dragPointerId === null && momentumFrame === null && !touchInvolved) {
         scrollPosition += elapsed * 0.022;
         if (scrollPosition >= bandHigh()) scrollPosition -= loopPoint;
         if (scrollPosition < bandLow()) scrollPosition += loopPoint;
@@ -318,14 +319,39 @@
       }
     };
 
-    // Native horizontal touch panning is disabled via touch-action: pan-y, so
-    // every finger or mouse drag runs through the pointer handlers below and
-    // the wrap can be applied on every frame without fighting the browser.
-    // Wheel and keyboard scrolling stay native: they apply deltas from the
-    // current position, so an immediate wrap is safe for them.
+    // Touch scrolling stays fully native. Repositioning mid-gesture or
+    // mid-fling fights the browser, so the loop is maintained at the only
+    // safe moments: on touchstart (touching kills any fling and the new
+    // gesture has not moved yet) and once scrolling settles. Wheel and
+    // keyboard input is delta-based, so it can be wrapped immediately.
+    let touchInvolved = false;
+    let settleTimer = null;
+
+    const settleWrap = () => {
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(() => {
+        touchInvolved = false;
+        wrapScrollPosition();
+      }, 140);
+    };
+
+    track.addEventListener('touchstart', () => {
+      touchInvolved = true;
+      window.clearTimeout(settleTimer);
+      stopMomentum();
+      wrapScrollPosition();
+    }, { passive: true });
+
+    track.addEventListener('touchend', settleWrap, { passive: true });
+    track.addEventListener('touchcancel', settleWrap, { passive: true });
+
     track.addEventListener('scroll', () => {
       if (dragPointerId !== null || momentumFrame !== null) return;
       if (Math.abs(track.scrollLeft - scrollPosition) > 1) scrollPosition = track.scrollLeft;
+      if (touchInvolved) {
+        settleWrap();
+        return;
+      }
       wrapScrollPosition();
     }, { passive: true });
 
@@ -355,7 +381,7 @@
     track.addEventListener('wheel', stopMomentum, { passive: true });
 
     track.addEventListener('pointerdown', (event) => {
-      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      if (event.pointerType !== 'mouse' || event.button !== 0) return;
       stopMomentum();
       dragPointerId = event.pointerId;
       dragStartX = event.clientX;
@@ -367,7 +393,7 @@
 
     track.addEventListener('pointermove', (event) => {
       if (dragPointerId !== event.pointerId) return;
-      if (event.pointerType === 'mouse' && (event.buttons & 1) === 0) {
+      if ((event.buttons & 1) === 0) {
         // The button was released outside the window; end the stale drag.
         dragPointerId = null;
         track.classList.remove('is-dragging');

@@ -1002,7 +1002,6 @@ h1 {
   margin-left: calc(50% - 50vw);
   padding: 18px max(18px, calc((100vw - var(--max-width)) / 2)) 22px;
   cursor: grab;
-  touch-action: pan-y;
   display: flex;
   gap: 18px;
   overflow-x: auto;
