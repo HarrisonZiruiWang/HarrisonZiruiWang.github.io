@@ -537,12 +537,14 @@ h1 {
 
 #teaching {
   padding-block-end: 56px;
+  border-top: 0;
   background: var(--surface-soft);
   box-shadow: 0 0 0 100vmax var(--surface-soft);
   clip-path: inset(0 -100vmax);
 }
 
 #reading-groups {
+  border-top: 0;
   background: var(--surface-alt);
   box-shadow: 0 0 0 100vmax var(--surface-alt);
   clip-path: inset(0 -100vmax);
