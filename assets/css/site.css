@@ -1268,6 +1268,17 @@ h1 {
   text-decoration: none;
 }
 
+.footer-bottom .back-to-top {
+  position: relative;
+  display: inline-block;
+  transition: color 480ms var(--ease-gentle), transform 620ms var(--ease-gentle);
+}
+
+.footer-bottom .back-to-top:hover,
+.footer-bottom .back-to-top:focus-visible {
+  transform: translateY(-1px);
+}
+
 .js .reveal {
   opacity: 0;
   transform: translateY(12px);
